@@ -1,0 +1,30 @@
+<div class="login-wrapper">
+    <form class="login" #registroForm="ngForm" (ngSubmit)="registro()">
+        <section class="title">
+            <h3 class="welcome">Registro</h3>
+            <h1>TournamentStorm</h1>
+            <h5 class="hint">Crea tu cuenta y participa!</h5>
+        </section>
+        <div class="login-group">
+
+            <clr-input-container>
+                <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="userModel.nombre" id="nombre" clrInput placeholder="Nombre" />
+            </clr-input-container>
+
+            <clr-input-container>
+                <input type="text" name="usuario" #usuario="ngModel" [(ngModel)]="userModel.usuario" id="usuario" clrInput placeholder="Usuario" />
+            </clr-input-container>
+
+            <clr-input-container>
+                <input type="email" name="email" #email="ngModel" [(ngModel)]="userModel.email" id="email" clrInput placeholder="Email" />
+            </clr-input-container>
+
+            <clr-password-container>
+                <input type="password" name="password" #password="ngModel" [(ngModel)]="userModel.password" id="password" clrPassword placeholder="Contraseña" />
+            </clr-password-container>
+
+            <button type="submit" class="btn btn-primary">Registrarse</button>
+            <a [routerLink]="['/login']" class="signup">Regresar...</a>
+        </div>
+    </form>
+</div>

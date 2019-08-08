@@ -1,0 +1,62 @@
+<app-header></app-header>
+<div class="main-container" >
+    <div class="content-container">
+            <div class="content-area">
+                    <h3><clr-icon shape="list"></clr-icon> Tema: {{dato.titulo}} </h3>
+                    <br>
+                    <clr-tree-node [(clrExpanded)]="expanded">
+                          Informacion
+                          <clr-tree-node>
+                                  <p><clr-icon shape="details" class="is-solid"></clr-icon> Descripcion: {{dato.descripcion}} 
+                                    <br>
+                                    <clr-icon shape="e-check" class="is-solid"></clr-icon>      Id Foro: {{dato._id}}
+                                      <br>
+                                      </p>
+                                          <br>
+                          </clr-tree-node>
+                          <button class="btn btn-link btn-sm" (click)="basic = true">Comentar</button>
+                      </clr-tree-node> 
+                      <br>
+                          <clr-modal [(clrModalOpen)]="basic">
+                            <h3 class="modal-title">Añadir Publicacion</h3>
+                            <div class="modal-body">
+                        
+                                <form clrForm  >
+                                   
+                                    <clr-textarea-container>
+                                        <label>Ingrese su comentario</label>
+                                        <textarea clrTextarea  name="description"  required [(ngModel)]="publicacionModel.comentario"></textarea>
+                                      </clr-textarea-container>
+                    
+                                </form>
+                        
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-outline" (click)="basic = false" [clrLoading]="validateBtnState">Cancel</button>
+                                <button type="button" class="btn btn-primary" (click)="basic = false; addPublicacion(dato._id)" [clrLoading]="validateBtnState">Ok</button>
+                            </div>
+                        </clr-modal>
+                           
+                        <h4>Comentarios</h4>
+                        <!--publicaciones ---------------->
+                        <div class="clr-row">
+                            <div class="clr-col-lg-12 clr-col-12" *ngFor = "let p of publicaciones" id="clr-row-foroid">
+                                    <div class="card" id="card-foroid">
+                                        <p>
+                                            <clr-icon shape="details" class="is-solid"></clr-icon>: {{p.comentario}} 
+                                            <br>
+                                            <clr-icon shape="user" class="is-solid"></clr-icon>: {{p.nombreUsuario}}
+                                            &nbsp; |&nbsp;
+                                            <clr-icon shape="clock" class="is-solid" id="colorear"></clr-icon>: {{(p.fecha | amFromUnix) | amLocale: 'es' | amTimeAgo}}
+                                             
+                                        </p>
+                                </div>
+                                <br>
+                            </div>  
+                            <!-------------------------------->     
+            </div>
+    </div>         
+</div>
+<app-footer></app-footer>
+
+

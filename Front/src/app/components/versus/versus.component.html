@@ -1,0 +1,208 @@
+<app-header></app-header>
+<div class="main-container" >
+    <div class="content-container">
+            <div class="content-area">
+            <!-----------------------CONTENIDO----------------------->
+            <div class="content-area">
+                    <h3 id="titulo-apartado"><clr-icon shape="shield" class="is-solid"></clr-icon> Bienvenido al apartado de Versus</h3>
+
+                    <div class="alert alert-success" role="alert" *ngIf="status == 'Se ha agregado el Versus, revise en la seccion de Mis Versus'">
+                        <div class="alert-items">
+                            <div class="alert-item static">
+                                <div class="alert-icon-wrapper">
+                                    <clr-icon class="alert-icon" shape="check-circle"></clr-icon>
+                                </div>
+                                <span class="alert-text">
+                                {{status}}
+                                </span>
+                            </div>
+                        </div>
+                    </div> 
+
+                <div class="alert alert-danger" role="alert" *ngIf="status == 'Rellene todos los campos necesarios'">
+                    <div class="alert-items">
+                        <div class="alert-item static">
+                            <div class="alert-icon-wrapper">
+                                <clr-icon class="alert-icon" shape="check-circle"></clr-icon>
+                            </div>
+                            <span class="alert-text">
+                            {{status}}
+                            </span>
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="alert alert-danger" role="alert" *ngIf="status == 'No ingreso el valor de entrada'">
+                        <div class="alert-items">
+                            <div class="alert-item static">
+                                <div class="alert-icon-wrapper">
+                                    <clr-icon class="alert-icon" shape="check-circle"></clr-icon>
+                                </div>
+                                <span class="alert-text">
+                                {{status}}
+                                </span>
+                            </div>
+                        </div>
+                    </div>   
+                    
+                    <br>
+                    <clr-tree-node [(clrExpanded)]="expanded">
+                          Informacion
+                          <clr-tree-node>
+                                  <p>En esta seccion puedes crear vesus contra otros jugadores,
+                                          <br>
+                                          o bien unirte o aceptar versus.
+                                          <br>
+                                          Te damos la oportunidad de apostar, en este caso con un administrador.
+                                    </p>
+                          </clr-tree-node>
+                          <button class="btn btn-link btn-sm" (click)="basic = true">Crear Versus</button>
+                      </clr-tree-node> 
+
+                    <clr-tabs>
+                            <clr-tab>
+                                <button clrTabLink id="link1">General</button>
+                                <clr-tab-content id="content1" *clrIfActive="true">
+                                        <div class="clr-row">
+                                                <div class="clr-col-lg-3 clr-col-12" *ngFor = "let enc of versus">
+                                                        <div class="card clickable" id="subcard-categorias">
+                                                            <div class="card-block">
+                                                                <div class="card-media-block">
+                                                                        <img src="../../../assets/fornite.png" *ngIf="enc.tipoJuego == 'Fornite'" class="card-media-image">
+                                                                        <img src="../../../assets/dota.png" *ngIf="enc.tipoJuego == 'Dota'" class="card-media-image">
+                                                                        <img src="../../../assets/lol.png" *ngIf="enc.tipoJuego == 'League of Legends'" class="card-media-image">
+                                                                        <img src="../../../assets/fifaX.jpg" *ngIf="enc.tipoJuego == 'Fifa'" class="card-media-image">
+                                                                        <img src="../../../assets/minicraft.png" *ngIf="enc.tipoJuego == 'Minecraft'" class="card-media-image">
+                                                                        <img src="../../../assets/counter.png" *ngIf="enc.tipoJuego == 'Counter Strike'" class="card-media-image">
+                                                                        <img src="../../../assets/mortal.png" *ngIf="enc.tipoJuego == 'Mortal Combat'" class="card-media-image">
+                                                                 
+                                                                        <div class="card-text">
+                                                                                {{enc.nombreVersus}}
+                                                                                <br>
+                                                                                 Juego  : {{enc.tipoJuego}}
+                                                                                <br>
+                                                                                 Tipo   : {{enc.tipoVersus}}
+                                                                                <br>
+                                                                            </div>
+                                                                    
+                                                                </div>
+                                                                <button class="btn btn-link btn-sm" (click)="datosVersus(enc._id,enc.idCreador,enc.nombreCreador,enc.idRetador1,
+                                                                enc.nombreRetador1,enc.idRetador2,enc.nombreRetador2,enc.nombreVersus,enc.tipoJuego,
+                                                                enc.tipoVersus,enc.valorEntrada,enc.puntosRetador1,enc.puntosRetador2,enc.resultado,enc.nombreGanador,enc.estado)" >Detalles</button>
+                                                                
+                                                            </div>
+                                                        </div>                                
+                                                    </div>
+                                        </div>   
+                                </clr-tab-content>
+                            </clr-tab>
+                            <clr-tab>
+                                <button clrTabLink>Mis Versus</button>
+                                <clr-tab-content *clrIfActive>
+                                        <div class="clr-row">
+                                        <div class="clr-col-lg-3 clr-col-12" *ngFor = "let enc of versusMe">
+                                                <div class="card clickable" id="subcard-categorias">
+                                                    <div class="card-block">
+                                                        <div class="card-media-block">
+                                                                <img src="../../../assets/fornite.png" *ngIf="enc.tipoJuego == 'Fornite'" class="card-media-image">
+                                                                <img src="../../../assets/dota.png" *ngIf="enc.tipoJuego == 'Dota'" class="card-media-image">
+                                                                <img src="../../../assets/lol.png" *ngIf="enc.tipoJuego == 'League of Legends'" class="card-media-image">
+                                                                <img src="../../../assets/fifaX.jpg" *ngIf="enc.tipoJuego == 'Fifa'" class="card-media-image">
+                                                                <img src="../../../assets/minicraft.png" *ngIf="enc.tipoJuego == 'Minecraft'" class="card-media-image">
+                                                                <img src="../../../assets/counter.png" *ngIf="enc.tipoJuego == 'Counter Strike'" class="card-media-image">
+                                                                <img src="../../../assets/mortal.png" *ngIf="enc.tipoJuego == 'Mortal Combat'" class="card-media-image">
+                                                         
+                                                                <div class="card-text">
+                                                                         {{enc.nombreVersus}}
+                                                                        <br>
+                                                                         Juego  : {{enc.tipoJuego}}
+                                                                        <br>
+                                                                         Tipo   : {{enc.tipoVersus}}
+                                                                        <br>
+                                                                    </div>
+                                                            
+                                                        </div>
+                                                        <button class="btn btn-link btn-sm" (click)="datosVersus(enc._id,enc.idCreador,enc.nombreCreador,enc.idRetador1,
+                                                        enc.nombreRetador1,enc.idRetador2,enc.nombreRetador2,enc.nombreVersus,enc.tipoJuego,
+                                                        enc.tipoVersus,enc.valorEntrada,enc.puntosRetador1,enc.puntosRetador2,enc.resultado,enc.nombreGanador,enc.estado)" >Detalles</button>
+                                                        
+                                                    </div>
+                                                </div>                                
+                                            </div>
+                                        </div>
+                                </clr-tab-content>
+                            </clr-tab>
+                        </clr-tabs> 
+                </div>
+
+
+
+
+            <!------------------------------------------------------->
+            </div>
+        </div>
+    </div>
+<app-footer></app-footer>
+
+
+
+
+<!---------------------------MODALE ADD------------------------------------>
+    
+<clr-modal [(clrModalOpen)]="basic">
+        <h3 class="modal-title">Añadir Versus</h3>
+        <div class="modal-body">
+    
+            <form clrForm >
+                <clr-input-container>
+                    <label>Nombre del Versus</label>
+                    <input clrInput placeholder="Nombre" name="nombreVersus" [(ngModel)]="versusModel.nombreVersus" />
+                </clr-input-container>
+    
+    
+                <br>
+                <label for="titulo">Juegos</label>
+                <select  class="custom-select" id="inputGroupSelect01" #tipoJuego="ngModel" [(ngModel)]="versusModel.tipoJuego" [ngModelOptions]="{standalone: true}" >
+                    <option >Fornite</option>
+                    <option >Dota</option>
+                    <option >League of Legends</option>
+                    <option >Fifa</option>
+                    <option >Minecraft</option>
+                    <option >Counter Strike</option>
+                    <option >Mortal Combat</option>
+                </select>  
+                <br>
+                <!--
+                <br>
+                <label for="titulo">Tipo de Versus</label>
+                <select clrSelect    class="custom-select" id="inputGroupSelect01" #tipoJuego="ngModel" [(ngModel)]="versusModel.tipoVersus" [ngModelOptions]="{standalone: true}">
+                    <option >Paga</option>  
+                    <option >Libre</option>
+                  </select>
+
+                  funciona pero me tira las letras en blanco y no se mira y no pude arreglarlo XD 
+                  -->
+                <br>
+                <label for="titulo">Tipo de Versus</label>
+                <select  class="custom-select" id="inputGroupSelect01" #tipoJuego="ngModel" [(ngModel)]="versusModel.tipoVersus" [ngModelOptions]="{standalone: true}" >
+                    <option >Paga</option>
+                    <option >Libre</option>
+                </select>  
+                <br>
+
+                <clr-input-container>
+                    <label>Valor de entrada</label>
+                    <label>Solo si es de tipo paga</label>
+                    <input clrInput placeholder="valor" type="number" name="valor" [(ngModel)]="versusModel.valorEntrada" />
+                </clr-input-container>
+
+
+
+            </form>
+    
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-outline" (click)="basic = false" [clrLoading]="validateBtnState">Cancel</button>
+            <button type="button" class="btn btn-primary" (click)="basic = false; addVersus()" [clrLoading]="validateBtnState">Ok</button>
+        </div>
+    </clr-modal>

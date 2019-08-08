@@ -1,0 +1,49 @@
+<header class="header-1" id="colorHeader">
+    <div class="branding">
+        <a href="/home" class="nav-link">
+            <clr-icon shape="vm-bug"></clr-icon>
+            <span class="title">Storm Organizer</span>
+        </a>
+    </div>
+    <div class="header-nav">
+            <a class="active nav-link">
+                    <clr-icon shape="euro" class="is-solid"></clr-icon>
+                </a>
+                <a class="active nav-link"><span class="nav-text">{{identity.moneda}}</span>
+                    </a>
+
+        </div>
+    <div class="header-actions">
+          <nav>
+                  <input type="checkbox" id="nav" class="hidden">
+                  <label for="nav" class="nav-btn">
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                  </label>
+      
+                          
+                  <div class="nav-wrapper">
+                      <div class="nav-box">
+                            <a class="active nav-link"><span class="nav-text">{{usuario}}</span>
+                            </a>
+                        <ul>
+                              <li><a [routerLink]="['/home']">Inicio <clr-icon shape="home" class="is-solid"></clr-icon></a></li>
+                              <li><a [routerLink]="['/noticias']">Noticias <clr-icon shape="bell" class="is-solid"></clr-icon></a></li>
+                              <li><a [routerLink]="['/torneos']">Torneos <clr-icon shape="organization" class="is-solid"></clr-icon></a></li>
+                              <li><a [routerLink]="['/versus']">Versus <clr-icon shape="shield" class="is-solid"></clr-icon>   
+                                                      <clr-icon shape="resize-down" class="is-solid"></clr-icon>
+                                                      <clr-icon shape="shield" class="is-solid"></clr-icon></a></li>
+                              <li><a [routerLink]="['/foro']">Forum <clr-icon shape="details" class="is-solid"></clr-icon></a></li>
+                              <li><a [routerLink]="['/amigos']">Amigos <clr-icon shape="users" class="is-solid"></clr-icon></a></li>
+                              <li><a [routerLink]="['/solicitudes']">Solicitudes <clr-icon shape="users"></clr-icon></a></li>
+                              <li><a [routerLink]="['/tienda']">Tienda <clr-icon shape="shopping-cart" class="is-solid"></clr-icon></a></li>
+                              <li><a [routerLink]="['/creditos']">Creditos <clr-icon shape="e-check" class="is-solid"></clr-icon></a></li>
+                              <li><a role="button" (click)="cerrarSesion()">Cerrar Sesion <clr-icon shape="logout" class="is-solid"></clr-icon>
+                              </a></li>
+                        </ul>
+                  </div>
+              </div>
+            </nav>
+    </div>
+</header>

@@ -1,0 +1,118 @@
+<app-header></app-header>
+<div class="main-container" >
+    <div class="content-container">
+            <div class="content-area">
+                    <h3 id="titulo-apartado"><clr-icon shape="users" class="is-solid"></clr-icon> Amigos</h3>
+                    <br>
+                    <clr-tree-node [(clrExpanded)]="expanded">
+                          Informacion
+                          <clr-tree-node>
+                                  <p>En esta seccion te ofrecemos un listado de amigos,
+                                      <br>
+                                      puedes agregar amigos, para ver sus torneos y versus privados.
+                                          <br>
+                                    </p>
+                          </clr-tree-node>
+                          <button class="btn btn-link btn-sm" (click)="basic = true">Añadir amigo</button>
+                      </clr-tree-node> 
+                <!-- Moda------------------------------------------------------------->
+                <clr-modal [(clrModalOpen)]="basic">
+                        <h3 class="modal-title">Añadir Amigo: Busqueda por Nombre</h3>
+
+                        <div class="modal-body">    
+                          <clr-input-container>
+                            <input placeholder="Ingrese el Nombre" clrInput type="text" name="descripcion"   id="input" required (keyup)="onKey($event)" />
+                            <clr-control-error>Por Favor Ingrese el Nombre</clr-control-error>
+                          </clr-input-container>
+                        <br>
+                                        
+                        <!-- --------------------- -->
+
+                        <div class="alert alert-app-level alert-danger" style="margin-bottom:24px" role="alert" *ngIf="status == 'solicitud reenviada'">
+                            <div class="alert-items">
+                                <div class="alert-item static">
+                                    <div class="alert-icon-wrapper">
+                                        <clr-icon class="alert-icon" shape="exclamation-circle"></clr-icon>
+                                    </div>
+                                    <div class="alert-text">
+                                        Ya se le ha enviado una solicitud a {{receptor}}.
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="close" aria-label="Close">
+                                <clr-icon aria-hidden="true" shape="close"></clr-icon>
+                            </button>
+                        </div>
+
+                        <!-- --------------------- -->
+
+                        <div class="alert alert-app-level alert-success" style="margin-bottom:24px" role="alert" *ngIf="status == 'solicitud enviada'">
+                            <div class="alert-items">
+                                <div class="alert-item static">
+                                    <div class="alert-icon-wrapper">
+                                        <clr-icon class="alert-icon" shape="check-circle"></clr-icon>
+                                    </div>
+                                    <div class="alert-text">
+                                        Se ha enviado la solicitud a {{receptor}}.
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="close" aria-label="Close">
+                                <clr-icon aria-hidden="true" shape="close"></clr-icon>
+                            </button>
+                        </div>
+
+                        <!-- --------------------- -->                        
+  
+                        
+                        <clr-datagrid> 
+
+                            <clr-dg-column>Usuario</clr-dg-column>
+                            <clr-dg-column>Nombre</clr-dg-column>
+                            <clr-dg-column>Opciones</clr-dg-column>
+            
+                            <clr-dg-row *ngFor = "let usuario of aray">
+                                <clr-dg-cell>{{usuario.usuario}}</clr-dg-cell>
+                                <clr-dg-cell>{{usuario.nombre}}</clr-dg-cell>
+                                <clr-dg-cell>
+                                    <button class="btn btn-link" (click)="enviarSolicitud(usuario._id,usuario.nombre)" ><clr-icon shape="plus-circle" class="is-solid"></clr-icon>Agregar</button>
+                                </clr-dg-cell>
+                                </clr-dg-row>
+                            
+                            <clr-dg-footer></clr-dg-footer>
+                        </clr-datagrid> 
+
+                            <br>
+                        </div>
+
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-outline btn-sm" (click)="basic = false; status = ok">Listo</button>
+                        </div>
+
+                </clr-modal>
+
+                 <!--------------------------------------------------------------------------->     
+                <form clrForm>
+                        <clr-input-container>
+                          <label>Buscar Usuario</label>
+                          <input clrInput placeholder="Nombre del usuario" name="name" />
+                        </clr-input-container>
+                      </form>
+
+                      <div class="clr-row">
+                            <div class="clr-col-lg-12 clr-col-12" *ngFor = "let a of amigos" id="clr-row-amigos">
+                                    <div class="card" id="card-amigos">
+                                        <p>
+                                            
+                                            <clr-icon shape="user" class="is-solid"></clr-icon> {{a.usuario}}
+                                            
+                                             
+                                        </p>
+                                        <button class="btn btn-link" (click)="eliminarAmigo(a._id)"><clr-icon shape="trash" class="is-solid"></clr-icon>Eliminar</button>
+                                </div>
+                                <br>
+                            </div> 
+                        </div>             
+            </div>
+        </div>
+    </div>

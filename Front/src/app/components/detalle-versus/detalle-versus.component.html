@@ -1,0 +1,249 @@
+<app-header></app-header>
+<div class="main-container" >
+    <div class="content-container">
+            <!-----------------------CONTENIDO----------------------->
+            <div class="content-area">
+                    <h3><clr-icon shape="shield"></clr-icon> Versus: {{detalleVersus.nombreVersus}} </h3>
+
+
+                    <div class="alert alert-danger" role="alert" *ngIf="status == 'Usted no puede particirpar en su propio versus'">
+                        <div class="alert-items">
+                            <div class="alert-item static">
+                                <div class="alert-icon-wrapper">
+                                    <clr-icon class="alert-icon" shape="check-circle"></clr-icon>
+                                </div>
+                                <span class="alert-text">
+                                {{status}}
+                                </span>
+                            </div>
+                        </div>
+                    </div> 
+
+                    <div class="alert alert-warning" role="alert" *ngIf="status == 'No tiene monedas suficientes para participar'">
+                            <div class="alert-items">
+                                <div class="alert-item static">
+                                    <div class="alert-icon-wrapper">
+                                        <clr-icon class="alert-icon" shape="check-circle"></clr-icon>
+                                    </div>
+                                    <span class="alert-text">
+                                    {{status}}
+                                    </span>
+                                </div>
+                            </div>
+                        </div> 
+
+                        <div class="alert alert-danger" role="alert" *ngIf="status == 'Usted ya esta inscrito en este Versus'">
+                                <div class="alert-items">
+                                    <div class="alert-item static">
+                                        <div class="alert-icon-wrapper">
+                                            <clr-icon class="alert-icon" shape="check-circle"></clr-icon>
+                                        </div>
+                                        <span class="alert-text">
+                                        {{status}}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div> 
+
+                            <div class="alert alert-danger" role="alert" *ngIf="status == 'Ya esta participando'">
+                                    <div class="alert-items">
+                                        <div class="alert-item static">
+                                            <div class="alert-icon-wrapper">
+                                                <clr-icon class="alert-icon" shape="check-circle"></clr-icon>
+                                            </div>
+                                            <span class="alert-text">
+                                            {{status}}
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div> 
+
+                                <div class="alert alert-danger" role="alert" *ngIf="status == 'Usted ya esta inscrito en este Versus'">
+                                        <div class="alert-items">
+                                            <div class="alert-item static">
+                                                <div class="alert-icon-wrapper">
+                                                    <clr-icon class="alert-icon" shape="check-circle"></clr-icon>
+                                                </div>
+                                                <span class="alert-text">
+                                                {{status}}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div> 
+
+                                    <div class="alert alert-danger" role="alert" *ngIf="status == 'No puede agregar resultado sin tener todos los participante'">
+                                            <div class="alert-items">
+                                                <div class="alert-item static">
+                                                    <div class="alert-icon-wrapper">
+                                                        <clr-icon class="alert-icon" shape="check-circle"></clr-icon>
+                                                    </div>
+                                                    <span class="alert-text">
+                                                    {{status}}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                        <div class="alert alert-danger" role="alert" *ngIf="status == 'Solo el creador del Versus puede agregar los resultados'">
+                                                <div class="alert-items">
+                                                    <div class="alert-item static">
+                                                        <div class="alert-icon-wrapper">
+                                                            <clr-icon class="alert-icon" shape="check-circle"></clr-icon>
+                                                        </div>
+                                                        <span class="alert-text">
+                                                        {{status}}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                            <div class="alert alert-danger" role="alert" *ngIf="status == 'Rellene todos los campos necesarios'">
+                                                    <div class="alert-items">
+                                                        <div class="alert-item static">
+                                                            <div class="alert-icon-wrapper">
+                                                                <clr-icon class="alert-icon" shape="check-circle"></clr-icon>
+                                                            </div>
+                                                            <span class="alert-text">
+                                                            {{status}}
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div> 
+                                                <div class="alert alert-warning" role="alert" *ngIf="status == 'Empate, tendra que haber un desempate'">
+                                                        <div class="alert-items">
+                                                            <div class="alert-item static">
+                                                                <div class="alert-icon-wrapper">
+                                                                    <clr-icon class="alert-icon" shape="check-circle"></clr-icon>
+                                                                </div>
+                                                                <span class="alert-text">
+                                                                {{status}}
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                </div> 
+
+                                                <div class="alert alert-success" role="alert" *ngIf="status == 'Felizidades' ">
+                                                        <div class="alert-items">
+                                                            <div class="alert-item static">
+                                                                <div class="alert-icon-wrapper">
+                                                                    <clr-icon class="alert-icon" shape="check-circle"></clr-icon>
+                                                                </div>
+                                                                <span class="alert-text">
+                                                                Felizidades al ganador: {{gan}}
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                </div> 
+
+                    <br>
+                    <clr-tree-node [(clrExpanded)]="expanded">
+                          Informacion 
+                        
+                          <clr-tree-node>
+                                                                       
+                                    <p>
+                                            Creador: {{detalleVersus.nombreCreador}}
+                                            <br>
+                                            Tipo: {{tip}}
+                                            <br>
+                                            Valor de entrada: {{valorEn}}
+                                            <br>
+                                            Estado: {{es}}
+                                        <br>                                               
+                                    </p>
+                                    
+                          </clr-tree-node>
+                           <button class="btn btn-link btn-sm" *ngIf="detalleVersus.idCreador == identity._id && es =='ACTIVO' && detalleVersus.tipoVersus == 'Paga'"  (click)="basic = true">Agregar Resultado</button>   
+                           <button class="btn btn-link btn-sm" *ngIf="detalleVersus.idCreador == identity._id && es =='ACTIVO' && detalleVersus.tipoVersus == 'Libre'"  (click)="adRL = true">Agregar Resultado</button> 
+                      </clr-tree-node> 
+                      <div class="clr-row">
+                            <div class="clr-col-lg-6 clr-col-12" id="clr-row-foroid">
+                                    <div class="card" id="card-foroid">
+                                        <p>
+                                            <clr-icon shape="user" class="is-solid"></clr-icon> Participante 1: {{ret1}}
+                                            <br>
+                                            Puntos: {{p1}}
+                                        </p>
+                                </div>
+                            </div> 
+                                <div class="clr-col-lg-6 clr-col-12" id="clr-row-foroid">
+                                        <div class="card" id="card-foroid">
+                                            <p>
+                                                <clr-icon shape="user" class="is-solid"></clr-icon> Participante 2: {{ret2}}
+                                                <br>
+                                            Puntos: {{p2}}
+                                            </p>
+                                    </div>
+                                    <div class="clr-col-lg-12 clr-col-12" id="clr-row-foroid">
+                                            <div class="card" id="card-foroid">
+                                                <p>
+                                                    <br>
+                                                    Resultado: {{res}}
+                                                    <br>
+                                                    <br>
+                                                    Ganador: {{gan}}
+                                                </p>
+                                        </div>
+                            </div> 
+                      </div>  
+                      <div class="card-footer" *ngIf="detalleVersus.tipoVersus == 'Paga'" >
+                      <button class="btn btn-link btn-sm" *ngIf="ret1 == 'VACANTE'"  (click)="addJugador1(detalleVersus._id)" >Participar</button>
+                      <button class="btn btn-link btn-sm"  *ngIf="ret1 != 'VACANTE' && ret2 == 'VACANTE'" (click)="addJugador2(detalleVersus._id)" >Participar</button>
+                      </div>
+
+                      <div class="card-footer" *ngIf="detalleVersus.tipoVersus == 'Libre'" >
+                        <button class="btn btn-link btn-sm" *ngIf="ret2 == 'VACANTE'" (click)="addJugador2Libre(detalleVersus._id)" >Participar</button>
+                      </div>
+            <!------------------------------------------------------->
+            </div>
+        </div>
+    </div>
+    <app-footer></app-footer>
+<!---------------------------MODALE ADD RESULTADO PAGA------------------------------------>
+    
+<clr-modal [(clrModalOpen)]="basic">
+        <h3 class="modal-title">Añadir Resultado</h3>
+        <div class="modal-body">
+    
+            <form clrForm >
+                <clr-input-container>
+                    <label>Puntos del Participante: {{ret1}}</label>
+                    <input clrInput placeholder="Puntos" type="number" name="puntos" [(ngModel)]="versusModel.puntosRetador1" />
+                </clr-input-container>
+                <clr-input-container>
+                    <label>Puntos del Participante: {{ret2}}</label>
+                    <input clrInput placeholder="Puntos" type="number" name="puntos" [(ngModel)]="versusModel.puntosRetador2" />
+                </clr-input-container>
+
+            </form>
+    
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-outline" (click)="basic = false" [clrLoading]="validateBtnState">Cancel</button>
+            <button type="button" class="btn btn-primary" (click)="basic = false; addResultadoPago()" [clrLoading]="validateBtnState">Ok</button>
+        </div>
+    </clr-modal>
+
+
+<!---------------------------MODALE ADD RESULTADO libre------------------------------------>
+    
+<clr-modal [(clrModalOpen)]="adRL">
+    <h3 class="modal-title">Añadir Resultado</h3>
+    <div class="modal-body">
+
+        <form clrForm >
+            <clr-input-container>
+                <label>Puntos del Participante: {{ret1}}</label>
+                <input clrInput placeholder="Puntos" type="number" name="puntos" [(ngModel)]="versusModel.puntosRetador1" />
+            </clr-input-container>
+            <clr-input-container>
+                <label>Puntos del Participante: {{ret2}}</label>
+                <input clrInput placeholder="Puntos" type="number" name="puntos" [(ngModel)]="versusModel.puntosRetador2" />
+            </clr-input-container>
+
+        </form>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline" (click)="adRL = false" [clrLoading]="validateBtnState">Cancel</button>
+        <button type="button" class="btn btn-primary" (click)="adRL = false; addResultadoLibre()" [clrLoading]="validateBtnState">Ok</button>
+    </div>
+</clr-modal>

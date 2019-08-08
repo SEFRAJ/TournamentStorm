@@ -1,0 +1,102 @@
+<app-header></app-header>
+<div class="main-container" >
+    <div class="content-container">
+            <div class="content-area">
+                    <h3 id="titulo-apartado"><clr-icon shape="list"></clr-icon> Bienvenido al apartado de Foros</h3>
+                    <br>
+                    <clr-tree-node [(clrExpanded)]="expanded">
+                          Informacion
+                          <clr-tree-node>
+                                  <p>En esta seccion puedes crear salas de chat entre los jugadores 
+                                      <br>
+                                      e interracciar con ellos tanto de tus partidas, como mucho mas.
+                                          <br>
+                                    </p>
+                          </clr-tree-node>
+                          <button class="btn btn-link btn-sm" (click)="basic = true">Crear Foro</button>
+                      </clr-tree-node> 
+                      <br>
+                          <clr-modal [(clrModalOpen)]="basic">
+                            <h3 class="modal-title">Añadir Foro</h3>
+                            <div class="modal-body">
+                        
+                                <form clrForm >
+                                    <clr-input-container>
+                                        <label>Titulo del Foro</label>
+                                        <input placeholder="Ingrese el titulo" clrInput type="text" name="descripcion"  [(ngModel)]="foroModel.titulo"  id="input" required />
+                                    </clr-input-container>
+                        
+                        
+                                    <br>
+                                    <clr-textarea-container>
+                                        <label>Description</label>
+                                        <textarea clrTextarea  name="description"  required [(ngModel)]="foroModel.descripcion"></textarea>
+                                      </clr-textarea-container>
+                    
+                                </form>
+                        
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-outline" (click)="basic = false" [clrLoading]="validateBtnState">Cancel</button>
+                                <button type="button" class="btn btn-primary" (click)="basic = false; addForo()" [clrLoading]="validateBtnState">Ok</button>
+                            </div>
+                        </clr-modal>  
+                        <clr-tabs>
+                                <clr-tab>
+                                    <button clrTabLink id="link1" (click)="getForos()">General</button>
+                                    <clr-tab-content id="content1" *clrIfActive="true">
+                                            <div class="clr-row">
+ 
+                                                <div class="clr-col-lg-4 clr-col-12" *ngFor = "let f of foros">
+                                                    <div class="card clickable" id="subcard-categorias">
+                                                        <div class="card-block">
+                                                            <div class="card-media-block">
+                                                                <img src="./../../../assets/PORTADA-NOTA.png" class="card-media-image">
+                                                                <div class="card-media-description">
+                                                                    <span class="card-media-title">
+                                                                        Tema: {{f.titulo}}
+                                                                    </span>
+                                                                    <span class="card-media-text">
+                                                                        <clr-icon shape="details"></clr-icon>: {{f.descripcion}}
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                            <button class="btn btn-link btn-sm" (click)="datosForo(f._id,f.titulo,f.descripcion,f.idCreador)" >Detalles</button>
+                                                        </div>
+                                                    </div>                                
+                                                </div>
+                                                    </div>  
+                                    </clr-tab-content>
+                                </clr-tab>
+                                <clr-tab>
+                                    <button clrTabLink (click)="misForos()">Mis Foros</button>
+                                    <clr-tab-content *clrIfActive>
+                                        <div class="clr-row">
+ 
+                                            <div class="clr-col-lg-4 clr-col-12" *ngFor = "let f of foros">
+                                                <div class="card clickable" id="subcard-categorias">
+                                                    <div class="card-block">
+                                                        <div class="card-media-block">
+                                                            <img src="./../../../assets/PORTADA-NOTA.png" class="card-media-image">
+                                                            <div class="card-media-description">
+                                                                <span class="card-media-title">
+                                                                    Tema: {{f.titulo}}
+                                                                </span>
+                                                                <span class="card-media-text">
+                                                                    <clr-icon shape="details"></clr-icon>: {{f.descripcion}}
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <button class="btn btn-link btn-sm" (click)="datosForo(f._id,f.titulo,f.descripcion,f.idCreador)" >Detalles</button>
+                                                    </div>
+                                                </div>                                
+                                            </div>
+                                                </div>  
+                                    </clr-tab-content>
+                                </clr-tab>
+                            </clr-tabs>                               
+            </div>
+        </div>
+    </div>
+<app-footer></app-footer>
+

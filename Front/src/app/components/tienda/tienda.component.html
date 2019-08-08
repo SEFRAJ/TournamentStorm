@@ -1,0 +1,1830 @@
+<app-header></app-header>
+<div class="main-container" >
+    <div class="content-container">
+            <div class="content-area">
+                    <h3 id="titulo-apartado"><clr-icon shape="shopping-cart" class="is-solid"></clr-icon> Tienda</h3>
+                    
+                    <clr-tree-node [(clrExpanded)]="expanded">
+                            Informacion
+                            <clr-tree-node>                                                          
+                                    <p>
+                                        En esta seccion puedes darle valor a tu modo de juego,
+                                        <br>
+                                        canjeando las monedas que hayas acumulado por tus juegos.
+                                        <br>
+                                        *Recuerda que no es rembolsable las compras.
+                                    </p>
+                            </clr-tree-node>
+                            <button class="btn btn-link btn-sm" (click)="basic = true">Comprar Monedas</button>
+                        </clr-tree-node> 
+                        <br>
+
+                      <h5 id="titulo-apartado"> Juegos Disponibles</h5>
+                      <clr-tree-node >
+                            League of Legends
+                            <clr-tree-node>                                  
+                                    <div class="clr-row" id="rows">
+                                            <div class="clr-col-lg-4 clr-col-12">
+                                                    <div class="card" id="subcard-categorias">
+                                                        <div class="card-img">
+                                                            <img src="../../../assets/vs (1).jpg" alt="..." />
+                                                        </div>
+                                                        <div class="card-block">
+                                                            <p class="card-text">
+                                                                Tarjeta: 5$ -- 700 RP
+                                                                <br>
+                                                                    Costo: 25 PS
+                                                            </p>
+                                                            <button class="btn btn-link btn-sm" (click)="wiz1 = true">Comprar</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="clr-col-lg-4 clr-col-12">
+                                                        <div class="card" id="subcard-categorias">
+                                                            <div class="card-img">
+                                                                <img src="../../../assets/vs (1).jpg" alt="..." />
+                                                            </div>
+                                                            <div class="card-block">
+                                                                <p class="card-text">
+                                                                    Tarjeta: 10$ -- 1500 RP
+                                                                    <br>
+                                                                    Costo: 40 PS
+                                                                </p>
+                                                                <button class="btn btn-link btn-sm" (click)="wiz2 = true">Comprar</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="clr-col-lg-4 clr-col-12">
+                                                            <div class="card" id="subcard-categorias">
+                                                                <div class="card-img">
+                                                                    <img src="../../../assets/vs (1).jpg" alt="..." />
+                                                                </div>
+                                                                <div class="card-block">
+                                                                    <p class="card-text">
+                                                                        Tarjeta: 50$ -- 7500 RP
+                                                                        <br>
+                                                                    Costo: 150 PS
+                                                                    </p>
+                                                                    <button class="btn btn-link btn-sm" (click)="wiz3 = true">Comprar</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                </div>
+                                        
+                            </clr-tree-node>                    
+                        </clr-tree-node> 
+ 
+                        <clr-tree-node >
+                            Fortnite
+                            <clr-tree-node>                                  
+                                        <div class="clr-row" id="rows">
+                                                <div class="clr-col-lg-4 clr-col-12">
+                                                        <div class="card" id="subcard-categorias">
+                                                            <div class="card-img">
+                                                                <img src="../../../assets/vs (1).jpg" alt="..." />
+                                                            </div>
+                                                            <div class="card-block">
+                                                                <p class="card-text">
+                                                                    Tarjeta: 10$ -- 1000 V-bucks
+                                                                    <br>
+                                                                    Costo: 175 PS
+                                                                </p>
+                                                                <button class="btn btn-link btn-sm" (click)="wiz4 = true">Comprar</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="clr-col-lg-4 clr-col-12">
+                                                            <div class="card" id="subcard-categorias">
+                                                                <div class="card-img">
+                                                                    <img src="../../../assets/vs (1).jpg" alt="..." />
+                                                                </div>
+                                                                <div class="card-block">
+                                                                    <p class="card-text">
+                                                                        Tarjeta: 20$ -- 2500 V-bucks
+                                                                        <br>
+                                                                    Costo: 300 PS
+                                                                    </p>
+                                                                    <button class="btn btn-link btn-sm" (click)="wiz5 = true">Comprar</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="clr-col-lg-4 clr-col-12">
+                                                                <div class="card" id="subcard-categorias">
+                                                                    <div class="card-img">
+                                                                        <img src="../../../assets/vs (1).jpg" alt="..." />
+                                                                    </div>
+                                                                    <div class="card-block">
+                                                                        <p class="card-text">
+                                                                            Tarjeta: 35$ -- 4500 V-bucks
+                                                                            <br>
+                                                                    Costo: 450 PS
+                                                                        </p>
+                                                                        <button class="btn btn-link btn-sm" (click)="wiz6 = true">Comprar</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                    </div>
+                                            
+                            </clr-tree-node>                    
+                        </clr-tree-node> 
+
+                        <clr-tree-node >
+                            Fifa
+                            <clr-tree-node>                                  
+                                            <div class="clr-row" id="rows">
+                                                    <div class="clr-col-lg-4 clr-col-12">
+                                                            <div class="card" id="subcard-categorias">
+                                                                <div class="card-img">
+                                                                    <img src="../../../assets/vs (1).jpg" alt="..." />
+                                                                </div>
+                                                                <div class="card-block">
+                                                                    <p class="card-text">
+                                                                        Tarjeta: 5$ -- 120K
+                                                                        <br>
+                                                                    Costo: 50 PS
+                                                                    </p>
+                                                                    <button class="btn btn-link btn-sm" (click)="wiz7 = true">Comprar</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="clr-col-lg-4 clr-col-12">
+                                                                <div class="card" id="subcard-categorias">
+                                                                    <div class="card-img">
+                                                                        <img src="../../../assets/vs (1).jpg" alt="..." />
+                                                                    </div>
+                                                                    <div class="card-block">
+                                                                        <p class="card-text">
+                                                                            Tarjeta: 20$ -- 500K
+                                                                            <br>
+                                                                    Costo: 180 PS
+                                                                        </p>
+                                                                        <button class="btn btn-link btn-sm" (click)="wiz8 = true">Comprar</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="clr-col-lg-4 clr-col-12">
+                                                                    <div class="card" id="subcard-categorias">
+                                                                        <div class="card-img">
+                                                                            <img src="../../../assets/vs (1).jpg" alt="..." />
+                                                                        </div>
+                                                                        <div class="card-block">
+                                                                            <p class="card-text">
+                                                                                Tarjeta: 35$ -- 750K
+                                                                                <br>
+                                                                    Costo: 280 PS
+                                                                            </p>
+                                                                            <button class="btn btn-link btn-sm" (click)="wiz9 = true">Comprar</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                        </div>
+                                                
+                            </clr-tree-node>                    
+                        </clr-tree-node> 
+
+<!------------------wiz1----------------->
+<clr-wizard #wizard [(clrWizardOpen)]="wiz1" [clrWizardSize]="'lg'">
+        <clr-wizard-title>Compra de Creditos</clr-wizard-title>
+    
+        <clr-wizard-button [type]="'cancel'">Cancel</clr-wizard-button>
+        <clr-wizard-button [type]="'previous'">Back</clr-wizard-button>
+        <clr-wizard-button [type]="'next'">Next</clr-wizard-button>
+        <clr-wizard-button [type]="'finish'" (click)="basic1 = true;restarMoneda(25)">Done</clr-wizard-button>
+    
+        <clr-wizard-page>
+            <ng-template clrPageTitle>Descripcion de la compra</ng-template>
+
+            <div class="clr-row">
+                    <div class="clr-row">
+                            <div class="clr-col-5">
+                                <span><div class="card" id="subcard-categorias">
+                                        <div class="card-img">
+                                            <img src="../../../assets/vs (1).jpg" alt="..." />
+                                        </div>
+                                        <div class="card-block">
+                                            <p class="card-text">
+                                                Tarjeta: 5$ -- 700 RP
+                                                <br>
+                                                    Costo: 25 PS
+                                            </p>
+                                            <button class="btn btn-link btn-sm" (click)="wiz1 = true">Comprar</button>
+                                        </div>
+                                    </div></span>
+                            </div>
+                            <div class="clr-col-5">
+                                <span>
+                                    <h5>Descripcion</h5>
+                                    <p>
+                                        El producto que usted desea adquirir es el paquete No.1 de LOL, esta compra no otorga ninguna ventaja competitiva ni en TournamentStorm; esta compra es de uso exclusivo dentro del juego y no se admiten devoluciones. *consulte terminos y condiciones*
+                                    </p>
+                                </span>
+                            </div>
+                        </div>
+            </div>
+
+            
+        </clr-wizard-page>
+    
+        <clr-wizard-page>
+            <ng-template clrPageTitle>Datos personales Para la compra</ng-template>
+
+            <form clrForm>
+                <clr-input-container>
+                  <label>Nombre del comprador</label>
+                  <input placeholder="Nombre" clrInput [(ngModel)]="exampleThree" name="name" required />
+                  <clr-control-helper></clr-control-helper>
+                  <clr-control-error>Este campo es requerido</clr-control-error>
+                </clr-input-container>
+              </form>
+
+              <form clrForm>
+                <clr-input-container>
+                  <label>No. Documento personal</label>
+                  <input placeholder="Documento" clrInput [(ngModel)]="exampleThree1" name="doc" required />
+                  <clr-control-helper></clr-control-helper>
+                  <clr-control-error>Este campo es requerido</clr-control-error>
+                </clr-input-container>
+              </form>
+
+              <form clrForm>
+                <clr-input-container>
+                  <label>País</label>
+                  <input placeholder="País" clrInput [(ngModel)]="exampleThree2" name="pais" required />
+                  <clr-control-helper></clr-control-helper>
+                  <clr-control-error>Este campo es requerido</clr-control-error>
+                </clr-input-container>
+              </form>
+
+              <form clrForm>
+                <clr-input-container>
+                  <label>Localidad</label>
+                  <input placeholder="Departamento/Estado" clrInput [(ngModel)]="exampleThree3" name="depa" required />
+                  <clr-control-helper></clr-control-helper>
+                  <clr-control-error>Este campo es requerido</clr-control-error>
+                </clr-input-container>
+              </form>
+        </clr-wizard-page>
+    
+        <clr-wizard-page #pageThree>
+            <ng-template clrPageTitle>Metodo de pago</ng-template>
+            <div class="btn-group btn-inverse">
+                <button class="btn">Tarjeta de Credito/Debito</button>
+                <button class="btn"><a href="https://www.paypal.com/gt/home" target="_blank">Paypal</a></button>
+            </div>
+            <form class="clr-form">
+                <div class="clr-form-control">
+                  <label for="basic" class="clr-control-label">No. de tarjeta</label>
+                  <div class="clr-control-container">
+                    <div class="clr-input-wrapper">
+                      <input type="text" id="basic" placeholder="357159..." class="clr-input">
+                      <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                    </div>
+                    <span class="clr-subtext">No. frontal de la tarjeta</span>
+                  </div>
+                </div>
+              </form>
+
+              <form class="clr-form">
+                <div class="clr-form-control">
+                  <label for="basic" class="clr-control-label">No. de CVC</label>
+                  <div class="clr-control-container">
+                    <div class="clr-input-wrapper">
+                      <input type="text" id="basic" placeholder="***" class="clr-input">
+                      <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                    </div>
+                    <span class="clr-subtext">Metodo de seguridad</span>
+                  </div>
+                </div>
+              </form>
+
+              <form class="clr-form">
+                <div class="clr-form-control">
+                  <label for="basic" class="clr-control-label">Fecha de venciminto</label>
+                  <div class="clr-control-container">
+                    <div class="clr-input-wrapper">
+                      <input type="text" id="basic" placeholder="05/28" class="clr-input">
+                      <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                    </div>
+                    <span class="clr-subtext">Fecha que expira la tarjeta</span>
+                  </div>
+                </div>
+              </form>
+
+        </clr-wizard-page>
+    
+        <clr-wizard-page #pageFive>
+            <ng-template clrPageTitle>Finalizacion de la compra</ng-template>
+            <h4>Terminos y condiciones</h4>                                  
+                <h6>INFORMACIÓN RELEVANTE</h6>
+                <p>
+                Es requisito necesario para la adquisición de los productos que se ofrecen en este sitio, que lea y acepte los siguientes Términos y Condiciones que a continuación se redactan. El uso de nuestros servicios así como la compra de nuestros productos implicará que usted ha leído y aceptado los Términos y Condiciones de Uso en el presente documento. Todas los productos  que son ofrecidos por nuestro sitio web pudieran ser creadas, cobradas, enviadas o presentadas por una página web tercera y en tal caso estarían sujetas a sus propios Términos y Condiciones. En algunos casos, para adquirir un producto, será necesario el registro por parte del usuario, con ingreso de datos personales fidedignos y definición de una contraseña.
+                El usuario puede elegir y cambiar la clave para su acceso de administración de la cuenta en cualquier momento, en caso de que se haya registrado y que sea necesario para la compra de alguno de nuestros productos.  no asume la responsabilidad en caso de que entregue dicha clave a terceros.                                       
+                Todas las compras y transacciones que se lleven a cabo por medio de este sitio web, están sujetas a un proceso de confirmación y verificación, el cual podría incluir la verificación del stock y disponibilidad de producto, validación de la forma de pago, validación de la factura (en caso de existir) y el cumplimiento de las condiciones requeridas por el medio de pago seleccionado. En algunos casos puede que se requiera una verificación por medio de correo electrónico.                                        
+                Los precios de los productos ofrecidos en esta Tienda Online es válido solamente en las compras realizadas en este sitio web.
+                </p>
+            <h6>*LICENCIA</h6>
+                <p>A través de su sitio web concede una licencia para que los usuarios utilicen  los productos que son vendidos en este sitio web de acuerdo a los Términos y Condiciones que se describen en este documento.
+                </p>
+            <h6>*USO NO AUTORIZADO</h6>
+                <p>En caso de que aplique (para venta de software, templetes, u otro producto de diseño y programación) usted no puede colocar uno de nuestros productos, modificado o sin modificar, en un CD, sitio web o ningún otro medio y ofrecerlos para la redistribución o la reventa de ningún tipo.
+                </p>
+            <h6>*PROPIEDAD</h6>
+                <p>Usted no puede declarar propiedad intelectual o exclusiva a ninguno de nuestros productos, modificado o sin modificar. Todos los productos son propiedad  de los proveedores del contenido. En caso de que no se especifique lo contrario, nuestros productos se proporcionan  sin ningún tipo de garantía, expresa o implícita. En ningún esta compañía será  responsables de ningún daño incluyendo, pero no limitado a, daños directos, indirectos, especiales, fortuitos o consecuentes u otras pérdidas resultantes del uso o de la imposibilidad de utilizar nuestros productos.
+                </p>
+            <h6>*POLÍTICA DE REEMBOLSO Y GARANTÍA</h6>
+                <p>En el caso de productos que sean  mercancías irrevocables no-tangibles, no realizamos reembolsos después de que se envíe el producto, usted tiene la responsabilidad de entender antes de comprarlo.  Le pedimos que lea cuidadosamente antes de comprarlo. Hacemos solamente excepciones con esta regla cuando la descripción no se ajusta al producto. Hay algunos productos que pudieran tener garantía y posibilidad de reembolso pero este será especificado al comprar el producto. En tales casos la garantía solo cubrirá fallas de fábrica y sólo se hará efectiva cuando el producto se haya usado correctamente. La garantía no cubre averías o daños ocasionados por uso indebido. Los términos de la garantía están asociados a fallas de fabricación y funcionamiento en condiciones normales de los productos y sólo se harán efectivos estos términos si el equipo ha sido usado correctamente. Esto incluye:
+                
+                – De acuerdo a las especificaciones técnicas indicadas para cada producto.
+                – En condiciones ambientales acorde con las especificaciones indicadas por el fabricante.
+                – En uso específico para la función con que fue diseñado de fábrica.
+                – En condiciones de operación eléctricas acorde con las especificaciones y tolerancias indicadas.
+            </p>
+            <h6>*COMPROBACIÓN ANTIFRAUDE</h6>
+                <p>La compra del cliente puede ser aplazada para la comprobación antifraude. También puede ser suspendida por más tiempo para una investigación más rigurosa, para evitar transacciones fraudulentas.
+                </p>
+            <h6>*PRIVACIDAD</h6>
+            <p>Este sitio web  garantiza que la información personal que usted envía cuenta con la seguridad necesaria. Los datos ingresados por usuario o en el caso de requerir una validación de los pedidos no serán entregados a terceros, salvo que deba ser revelada en cumplimiento a una orden judicial o requerimientos legales.                                        
+               La suscripción a boletines de correos electrónicos publicitarios es voluntaria y podría ser seleccionada al momento de crear su cuenta.
+               reserva los derechos de cambiar o de modificar estos términos sin previo aviso.</p>
+
+
+
+            
+               <clr-checkbox-container clrInline>
+                <clr-checkbox-wrapper>
+                  <input type="checkbox" clrCheckbox name="options" required value="option1" [(ngModel)]="options" />
+                  <label>He leido y acepto los terminos de uso</label>
+                </clr-checkbox-wrapper>
+                <clr-control-helper></clr-control-helper>
+                <clr-control-error>Este paso es requerido</clr-control-error>
+              </clr-checkbox-container>
+        </clr-wizard-page>
+</clr-wizard>
+<!---------------------------------------->
+<!------------------wiz2----------------->
+<clr-wizard #wizard [(clrWizardOpen)]="wiz2" [clrWizardSize]="'lg'">
+    <clr-wizard-title>Compra de Creditos</clr-wizard-title>
+
+    <clr-wizard-button [type]="'cancel'">Cancel</clr-wizard-button>
+    <clr-wizard-button [type]="'previous'">Back</clr-wizard-button>
+    <clr-wizard-button [type]="'next'">Next</clr-wizard-button>
+    <clr-wizard-button [type]="'finish'" (click)="basic1 = true;restarMoneda(40)">Done</clr-wizard-button>
+
+    <clr-wizard-page>
+        <ng-template clrPageTitle>Descripcion de la compra</ng-template>
+
+        <div class="clr-row">
+                <div class="clr-row">
+                        <div class="clr-col-5">
+                            <span>
+                                    <div class="card" id="subcard-categorias">
+                                            <div class="card-img">
+                                                <img src="../../../assets/vs (1).jpg" alt="..." />
+                                            </div>
+                                            <div class="card-block">
+                                                <p class="card-text">
+                                                    Tarjeta: 10$ -- 1500 RP
+                                                    <br>
+                                                    Costo: 40 PS
+                                                </p>
+                                            </div>
+                                        </div>
+                            </span>
+                        </div>
+                        <div class="clr-col-5">
+                            <span>
+                                <h5>Descripcion</h5>
+                                <p>
+                                    El producto que usted desea adquirir es el paquete No.2 de LOL, esta compra no otorga ninguna ventaja competitiva ni en TournamentStorm; esta compra es de uso exclusivo dentro del juego y no se admiten devoluciones. *consulte terminos y condiciones*
+                                </p>
+                            </span>
+                        </div>
+                    </div>
+
+        </div>
+
+        
+    </clr-wizard-page>
+
+    <clr-wizard-page>
+        <ng-template clrPageTitle>Datos personales Para la compra</ng-template>
+
+        <form clrForm>
+            <clr-input-container>
+              <label>Nombre del comprador</label>
+              <input placeholder="Nombre" clrInput [(ngModel)]="exampleThree" name="name" required />
+              <clr-control-helper></clr-control-helper>
+              <clr-control-error>Este campo es requerido</clr-control-error>
+            </clr-input-container>
+          </form>
+
+          <form clrForm>
+            <clr-input-container>
+              <label>No. Documento personal</label>
+              <input placeholder="Documento" clrInput [(ngModel)]="exampleThree1" name="doc" required />
+              <clr-control-helper></clr-control-helper>
+              <clr-control-error>Este campo es requerido</clr-control-error>
+            </clr-input-container>
+          </form>
+
+          <form clrForm>
+            <clr-input-container>
+              <label>País</label>
+              <input placeholder="País" clrInput [(ngModel)]="exampleThree2" name="pais" required />
+              <clr-control-helper></clr-control-helper>
+              <clr-control-error>Este campo es requerido</clr-control-error>
+            </clr-input-container>
+          </form>
+
+          <form clrForm>
+            <clr-input-container>
+              <label>Localidad</label>
+              <input placeholder="Departamento/Estado" clrInput [(ngModel)]="exampleThree3" name="depa" required />
+              <clr-control-helper></clr-control-helper>
+              <clr-control-error>Este campo es requerido</clr-control-error>
+            </clr-input-container>
+          </form>
+    </clr-wizard-page>
+
+    <clr-wizard-page #pageThree>
+        <ng-template clrPageTitle>Metodo de pago</ng-template>
+        <div class="btn-group btn-inverse">
+            <button class="btn">Tarjeta de Credito/Debito</button>
+            <button class="btn"><a href="https://www.paypal.com/gt/home" target="_blank">Paypal</a></button>
+        </div>
+        <form class="clr-form">
+            <div class="clr-form-control">
+              <label for="basic" class="clr-control-label">No. de tarjeta</label>
+              <div class="clr-control-container">
+                <div class="clr-input-wrapper">
+                  <input type="text" id="basic" placeholder="357159..." class="clr-input">
+                  <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                </div>
+                <span class="clr-subtext">No. frontal de la tarjeta</span>
+              </div>
+            </div>
+          </form>
+
+          <form class="clr-form">
+            <div class="clr-form-control">
+              <label for="basic" class="clr-control-label">No. de CVC</label>
+              <div class="clr-control-container">
+                <div class="clr-input-wrapper">
+                  <input type="text" id="basic" placeholder="***" class="clr-input">
+                  <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                </div>
+                <span class="clr-subtext">Metodo de seguridad</span>
+              </div>
+            </div>
+          </form>
+
+          <form class="clr-form">
+            <div class="clr-form-control">
+              <label for="basic" class="clr-control-label">Fecha de venciminto</label>
+              <div class="clr-control-container">
+                <div class="clr-input-wrapper">
+                  <input type="text" id="basic" placeholder="05/28" class="clr-input">
+                  <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                </div>
+                <span class="clr-subtext">Fecha que expira la tarjeta</span>
+              </div>
+            </div>
+          </form>
+
+    </clr-wizard-page>
+
+    <clr-wizard-page #pageFive>
+        <ng-template clrPageTitle>Finalizacion de la compra</ng-template>
+        <h4>Terminos y condiciones</h4>                                  
+            <h6>INFORMACIÓN RELEVANTE</h6>
+            <p>
+            Es requisito necesario para la adquisición de los productos que se ofrecen en este sitio, que lea y acepte los siguientes Términos y Condiciones que a continuación se redactan. El uso de nuestros servicios así como la compra de nuestros productos implicará que usted ha leído y aceptado los Términos y Condiciones de Uso en el presente documento. Todas los productos  que son ofrecidos por nuestro sitio web pudieran ser creadas, cobradas, enviadas o presentadas por una página web tercera y en tal caso estarían sujetas a sus propios Términos y Condiciones. En algunos casos, para adquirir un producto, será necesario el registro por parte del usuario, con ingreso de datos personales fidedignos y definición de una contraseña.
+            El usuario puede elegir y cambiar la clave para su acceso de administración de la cuenta en cualquier momento, en caso de que se haya registrado y que sea necesario para la compra de alguno de nuestros productos.  no asume la responsabilidad en caso de que entregue dicha clave a terceros.                                       
+            Todas las compras y transacciones que se lleven a cabo por medio de este sitio web, están sujetas a un proceso de confirmación y verificación, el cual podría incluir la verificación del stock y disponibilidad de producto, validación de la forma de pago, validación de la factura (en caso de existir) y el cumplimiento de las condiciones requeridas por el medio de pago seleccionado. En algunos casos puede que se requiera una verificación por medio de correo electrónico.                                        
+            Los precios de los productos ofrecidos en esta Tienda Online es válido solamente en las compras realizadas en este sitio web.
+            </p>
+        <h6>*LICENCIA</h6>
+            <p>A través de su sitio web concede una licencia para que los usuarios utilicen  los productos que son vendidos en este sitio web de acuerdo a los Términos y Condiciones que se describen en este documento.
+            </p>
+        <h6>*USO NO AUTORIZADO</h6>
+            <p>En caso de que aplique (para venta de software, templetes, u otro producto de diseño y programación) usted no puede colocar uno de nuestros productos, modificado o sin modificar, en un CD, sitio web o ningún otro medio y ofrecerlos para la redistribución o la reventa de ningún tipo.
+            </p>
+        <h6>*PROPIEDAD</h6>
+            <p>Usted no puede declarar propiedad intelectual o exclusiva a ninguno de nuestros productos, modificado o sin modificar. Todos los productos son propiedad  de los proveedores del contenido. En caso de que no se especifique lo contrario, nuestros productos se proporcionan  sin ningún tipo de garantía, expresa o implícita. En ningún esta compañía será  responsables de ningún daño incluyendo, pero no limitado a, daños directos, indirectos, especiales, fortuitos o consecuentes u otras pérdidas resultantes del uso o de la imposibilidad de utilizar nuestros productos.
+            </p>
+        <h6>*POLÍTICA DE REEMBOLSO Y GARANTÍA</h6>
+            <p>En el caso de productos que sean  mercancías irrevocables no-tangibles, no realizamos reembolsos después de que se envíe el producto, usted tiene la responsabilidad de entender antes de comprarlo.  Le pedimos que lea cuidadosamente antes de comprarlo. Hacemos solamente excepciones con esta regla cuando la descripción no se ajusta al producto. Hay algunos productos que pudieran tener garantía y posibilidad de reembolso pero este será especificado al comprar el producto. En tales casos la garantía solo cubrirá fallas de fábrica y sólo se hará efectiva cuando el producto se haya usado correctamente. La garantía no cubre averías o daños ocasionados por uso indebido. Los términos de la garantía están asociados a fallas de fabricación y funcionamiento en condiciones normales de los productos y sólo se harán efectivos estos términos si el equipo ha sido usado correctamente. Esto incluye:
+            
+            – De acuerdo a las especificaciones técnicas indicadas para cada producto.
+            – En condiciones ambientales acorde con las especificaciones indicadas por el fabricante.
+            – En uso específico para la función con que fue diseñado de fábrica.
+            – En condiciones de operación eléctricas acorde con las especificaciones y tolerancias indicadas.
+        </p>
+        <h6>*COMPROBACIÓN ANTIFRAUDE</h6>
+            <p>La compra del cliente puede ser aplazada para la comprobación antifraude. También puede ser suspendida por más tiempo para una investigación más rigurosa, para evitar transacciones fraudulentas.
+            </p>
+        <h6>*PRIVACIDAD</h6>
+        <p>Este sitio web  garantiza que la información personal que usted envía cuenta con la seguridad necesaria. Los datos ingresados por usuario o en el caso de requerir una validación de los pedidos no serán entregados a terceros, salvo que deba ser revelada en cumplimiento a una orden judicial o requerimientos legales.                                        
+           La suscripción a boletines de correos electrónicos publicitarios es voluntaria y podría ser seleccionada al momento de crear su cuenta.
+           reserva los derechos de cambiar o de modificar estos términos sin previo aviso.</p>
+
+
+
+        
+           <clr-checkbox-container clrInline>
+            <clr-checkbox-wrapper>
+              <input type="checkbox" clrCheckbox name="options" required value="option1" [(ngModel)]="options" />
+              <label>He leido y acepto los terminos de uso</label>
+            </clr-checkbox-wrapper>
+            <clr-control-helper></clr-control-helper>
+            <clr-control-error>Este paso es requerido</clr-control-error>
+          </clr-checkbox-container>
+    </clr-wizard-page>
+</clr-wizard>
+<!---------------------------------------->
+<!------------------wiz3----------------->
+<clr-wizard #wizard [(clrWizardOpen)]="wiz3" [clrWizardSize]="'lg'">
+    <clr-wizard-title>Compra de Creditos</clr-wizard-title>
+
+    <clr-wizard-button [type]="'cancel'">Cancel</clr-wizard-button>
+    <clr-wizard-button [type]="'previous'">Back</clr-wizard-button>
+    <clr-wizard-button [type]="'next'">Next</clr-wizard-button>
+    <clr-wizard-button [type]="'finish'" (click)="basic1 = true;restarMoneda(150)">Done</clr-wizard-button>
+    
+    <clr-wizard-page>
+    <ng-template clrPageTitle>Descripcion de la compra</ng-template>
+
+                                    <div class="clr-row">
+                                        <div class="clr-row">
+                                                    <div class="clr-col-5">
+                                                        <span>
+                                                                <div class="card" id="subcard-categorias">
+                                                                        <div class="card-img">
+                                                                            <img src="../../../assets/vs (1).jpg" alt="..." />
+                                                                        </div>
+                                                                        <div class="card-block">
+                                                                            <p class="card-text">
+                                                                                Tarjeta: 50$ -- 7500 RP
+                                                                                <br>
+                                                                            Costo: 150 PS
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                        </span>
+                                                    </div>
+                                                    <div class="clr-col-5">
+                                                        <span>
+                                                            <h5>Descripcion</h5>
+                                                            <p>
+                                                                El producto que usted desea adquirir es el paquete No.3 de LOL, esta compra no otorga ninguna ventaja competitiva ni en TournamentStorm; esta compra es de uso exclusivo dentro del juego y no se admiten devoluciones. *consulte terminos y condiciones*
+                                                            </p>
+                                                        </span>
+                                                    </div>
+                                            </div>
+
+                                    </div>
+
+                                    
+                                </clr-wizard-page>
+                            
+                                <clr-wizard-page>
+                                    <ng-template clrPageTitle>Datos personales Para la compra</ng-template>
+
+                                    <form clrForm>
+                                        <clr-input-container>
+                                          <label>Nombre del comprador</label>
+                                          <input placeholder="Nombre" clrInput [(ngModel)]="exampleThree" name="name" required />
+                                          <clr-control-helper></clr-control-helper>
+                                          <clr-control-error>Este campo es requerido</clr-control-error>
+                                        </clr-input-container>
+                                      </form>
+
+                                      <form clrForm>
+                                        <clr-input-container>
+                                          <label>No. Documento personal</label>
+                                          <input placeholder="Documento" clrInput [(ngModel)]="exampleThree1" name="doc" required />
+                                          <clr-control-helper></clr-control-helper>
+                                          <clr-control-error>Este campo es requerido</clr-control-error>
+                                        </clr-input-container>
+                                      </form>
+
+                                      <form clrForm>
+                                        <clr-input-container>
+                                          <label>País</label>
+                                          <input placeholder="País" clrInput [(ngModel)]="exampleThree2" name="pais" required />
+                                          <clr-control-helper></clr-control-helper>
+                                          <clr-control-error>Este campo es requerido</clr-control-error>
+                                        </clr-input-container>
+                                      </form>
+
+                                      <form clrForm>
+                                        <clr-input-container>
+                                          <label>Localidad</label>
+                                          <input placeholder="Departamento/Estado" clrInput [(ngModel)]="exampleThree3" name="depa" required />
+                                          <clr-control-helper></clr-control-helper>
+                                          <clr-control-error>Este campo es requerido</clr-control-error>
+                                        </clr-input-container>
+                                      </form>
+                                </clr-wizard-page>
+                            
+                                <clr-wizard-page #pageThree>
+                                    <ng-template clrPageTitle>Metodo de pago</ng-template>
+                                    <div class="btn-group btn-inverse">
+                                        <button class="btn">Tarjeta de Credito/Debito</button>
+                                        <button class="btn"><a href="https://www.paypal.com/gt/home" target="_blank">Paypal</a></button>
+                                    </div>
+                                    <form class="clr-form">
+                                        <div class="clr-form-control">
+                                          <label for="basic" class="clr-control-label">No. de tarjeta</label>
+                                          <div class="clr-control-container">
+                                            <div class="clr-input-wrapper">
+                                              <input type="text" id="basic" placeholder="357159..." class="clr-input">
+                                              <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                                            </div>
+                                            <span class="clr-subtext">No. frontal de la tarjeta</span>
+                                          </div>
+                                        </div>
+                                      </form>
+
+                                      <form class="clr-form">
+                                        <div class="clr-form-control">
+                                          <label for="basic" class="clr-control-label">No. de CVC</label>
+                                          <div class="clr-control-container">
+                                            <div class="clr-input-wrapper">
+                                              <input type="text" id="basic" placeholder="***" class="clr-input">
+                                              <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                                            </div>
+                                            <span class="clr-subtext">Metodo de seguridad</span>
+                                          </div>
+                                        </div>
+                                      </form>
+
+                                      <form class="clr-form">
+                                        <div class="clr-form-control">
+                                          <label for="basic" class="clr-control-label">Fecha de venciminto</label>
+                                          <div class="clr-control-container">
+                                            <div class="clr-input-wrapper">
+                                              <input type="text" id="basic" placeholder="05/28" class="clr-input">
+                                              <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                                            </div>
+                                            <span class="clr-subtext">Fecha que expira la tarjeta</span>
+                                          </div>
+                                        </div>
+                                      </form>
+
+                                </clr-wizard-page>
+                            
+                                <clr-wizard-page #pageFive>
+                                    <ng-template clrPageTitle>Finalizacion de la compra</ng-template>
+                                    <h4>Terminos y condiciones</h4>                                  
+                                        <h6>INFORMACIÓN RELEVANTE</h6>
+                                        <p>
+                                        Es requisito necesario para la adquisición de los productos que se ofrecen en este sitio, que lea y acepte los siguientes Términos y Condiciones que a continuación se redactan. El uso de nuestros servicios así como la compra de nuestros productos implicará que usted ha leído y aceptado los Términos y Condiciones de Uso en el presente documento. Todas los productos  que son ofrecidos por nuestro sitio web pudieran ser creadas, cobradas, enviadas o presentadas por una página web tercera y en tal caso estarían sujetas a sus propios Términos y Condiciones. En algunos casos, para adquirir un producto, será necesario el registro por parte del usuario, con ingreso de datos personales fidedignos y definición de una contraseña.
+                                        El usuario puede elegir y cambiar la clave para su acceso de administración de la cuenta en cualquier momento, en caso de que se haya registrado y que sea necesario para la compra de alguno de nuestros productos.  no asume la responsabilidad en caso de que entregue dicha clave a terceros.                                       
+                                        Todas las compras y transacciones que se lleven a cabo por medio de este sitio web, están sujetas a un proceso de confirmación y verificación, el cual podría incluir la verificación del stock y disponibilidad de producto, validación de la forma de pago, validación de la factura (en caso de existir) y el cumplimiento de las condiciones requeridas por el medio de pago seleccionado. En algunos casos puede que se requiera una verificación por medio de correo electrónico.                                        
+                                        Los precios de los productos ofrecidos en esta Tienda Online es válido solamente en las compras realizadas en este sitio web.
+                                        </p>
+                                    <h6>*LICENCIA</h6>
+                                        <p>A través de su sitio web concede una licencia para que los usuarios utilicen  los productos que son vendidos en este sitio web de acuerdo a los Términos y Condiciones que se describen en este documento.
+                                        </p>
+                                    <h6>*USO NO AUTORIZADO</h6>
+                                        <p>En caso de que aplique (para venta de software, templetes, u otro producto de diseño y programación) usted no puede colocar uno de nuestros productos, modificado o sin modificar, en un CD, sitio web o ningún otro medio y ofrecerlos para la redistribución o la reventa de ningún tipo.
+                                        </p>
+                                    <h6>*PROPIEDAD</h6>
+                                        <p>Usted no puede declarar propiedad intelectual o exclusiva a ninguno de nuestros productos, modificado o sin modificar. Todos los productos son propiedad  de los proveedores del contenido. En caso de que no se especifique lo contrario, nuestros productos se proporcionan  sin ningún tipo de garantía, expresa o implícita. En ningún esta compañía será  responsables de ningún daño incluyendo, pero no limitado a, daños directos, indirectos, especiales, fortuitos o consecuentes u otras pérdidas resultantes del uso o de la imposibilidad de utilizar nuestros productos.
+                                        </p>
+                                    <h6>*POLÍTICA DE REEMBOLSO Y GARANTÍA</h6>
+                                        <p>En el caso de productos que sean  mercancías irrevocables no-tangibles, no realizamos reembolsos después de que se envíe el producto, usted tiene la responsabilidad de entender antes de comprarlo.  Le pedimos que lea cuidadosamente antes de comprarlo. Hacemos solamente excepciones con esta regla cuando la descripción no se ajusta al producto. Hay algunos productos que pudieran tener garantía y posibilidad de reembolso pero este será especificado al comprar el producto. En tales casos la garantía solo cubrirá fallas de fábrica y sólo se hará efectiva cuando el producto se haya usado correctamente. La garantía no cubre averías o daños ocasionados por uso indebido. Los términos de la garantía están asociados a fallas de fabricación y funcionamiento en condiciones normales de los productos y sólo se harán efectivos estos términos si el equipo ha sido usado correctamente. Esto incluye:
+                                        
+                                        – De acuerdo a las especificaciones técnicas indicadas para cada producto.
+                                        – En condiciones ambientales acorde con las especificaciones indicadas por el fabricante.
+                                        – En uso específico para la función con que fue diseñado de fábrica.
+                                        – En condiciones de operación eléctricas acorde con las especificaciones y tolerancias indicadas.
+                                    </p>
+                                    <h6>*COMPROBACIÓN ANTIFRAUDE</h6>
+                                        <p>La compra del cliente puede ser aplazada para la comprobación antifraude. También puede ser suspendida por más tiempo para una investigación más rigurosa, para evitar transacciones fraudulentas.
+                                        </p>
+                                    <h6>*PRIVACIDAD</h6>
+                                    <p>Este sitio web  garantiza que la información personal que usted envía cuenta con la seguridad necesaria. Los datos ingresados por usuario o en el caso de requerir una validación de los pedidos no serán entregados a terceros, salvo que deba ser revelada en cumplimiento a una orden judicial o requerimientos legales.                                        
+                                       La suscripción a boletines de correos electrónicos publicitarios es voluntaria y podría ser seleccionada al momento de crear su cuenta.
+                                       reserva los derechos de cambiar o de modificar estos términos sin previo aviso.</p>
+
+
+
+                                    
+                                       <clr-checkbox-container clrInline>
+                                        <clr-checkbox-wrapper>
+                                          <input type="checkbox" clrCheckbox name="options" required value="option1" [(ngModel)]="options" />
+                                          <label>He leido y acepto los terminos de uso</label>
+                                        </clr-checkbox-wrapper>
+                                        <clr-control-helper></clr-control-helper>
+                                        <clr-control-error>Este paso es requerido</clr-control-error>
+                                      </clr-checkbox-container>
+                                </clr-wizard-page>
+</clr-wizard>
+<!---------------------------------------->
+
+
+<!------------------wiz4----------------->
+<clr-wizard #wizard [(clrWizardOpen)]="wiz4" [clrWizardSize]="'lg'">
+    <clr-wizard-title>Compra de Creditos</clr-wizard-title>
+
+    <clr-wizard-button [type]="'cancel'">Cancel</clr-wizard-button>
+    <clr-wizard-button [type]="'previous'">Back</clr-wizard-button>
+    <clr-wizard-button [type]="'next'">Next</clr-wizard-button>
+    <clr-wizard-button [type]="'finish'" (click)="basic1 = true;restarMoneda(175)">Done</clr-wizard-button>
+
+    <clr-wizard-page>
+        <ng-template clrPageTitle>Descripcion de la compra</ng-template>
+
+        <div class="clr-row">
+                <div class="clr-row">
+                        <div class="clr-col-5">
+                            <span>
+                                    <div class="card" id="subcard-categorias">
+                                            <div class="card-img">
+                                                <img src="../../../assets/vs (1).jpg" alt="..." />
+                                            </div>
+                                            <div class="card-block">
+                                                <p class="card-text">
+                                                    Tarjeta: 10$ -- 1000 V-bucks
+                                                    <br>
+                                                    Costo: 175 PS
+                                                </p>
+                                            </div>
+                                        </div>
+                            </span>
+                        </div>
+                        <div class="clr-col-5">
+                            <span>
+                                <h5>Descripcion</h5>
+                                <p>
+                                    El producto que usted desea adquirir es el paquete No.1 de Fortnite, esta compra no otorga ninguna ventaja competitiva ni en TournamentStorm; esta compra es de uso exclusivo dentro del juego y no se admiten devoluciones. *consulte terminos y condiciones*
+                                </p>
+                            </span>
+                        </div>
+                </div>
+        </div>
+
+        
+    </clr-wizard-page>
+
+    <clr-wizard-page>
+        <ng-template clrPageTitle>Datos personales Para la compra</ng-template>
+
+        <form clrForm>
+            <clr-input-container>
+              <label>Nombre del comprador</label>
+              <input placeholder="Nombre" clrInput [(ngModel)]="exampleThree" name="name" required />
+              <clr-control-helper></clr-control-helper>
+              <clr-control-error>Este campo es requerido</clr-control-error>
+            </clr-input-container>
+          </form>
+
+          <form clrForm>
+            <clr-input-container>
+              <label>No. Documento personal</label>
+              <input placeholder="Documento" clrInput [(ngModel)]="exampleThree1" name="doc" required />
+              <clr-control-helper></clr-control-helper>
+              <clr-control-error>Este campo es requerido</clr-control-error>
+            </clr-input-container>
+          </form>
+
+          <form clrForm>
+            <clr-input-container>
+              <label>País</label>
+              <input placeholder="País" clrInput [(ngModel)]="exampleThree2" name="pais" required />
+              <clr-control-helper></clr-control-helper>
+              <clr-control-error>Este campo es requerido</clr-control-error>
+            </clr-input-container>
+          </form>
+
+          <form clrForm>
+            <clr-input-container>
+              <label>Localidad</label>
+              <input placeholder="Departamento/Estado" clrInput [(ngModel)]="exampleThree3" name="depa" required />
+              <clr-control-helper></clr-control-helper>
+              <clr-control-error>Este campo es requerido</clr-control-error>
+            </clr-input-container>
+          </form>
+    </clr-wizard-page>
+
+    <clr-wizard-page #pageThree>
+        <ng-template clrPageTitle>Metodo de pago</ng-template>
+        <div class="btn-group btn-inverse">
+            <button class="btn">Tarjeta de Credito/Debito</button>
+            <button class="btn"><a href="https://www.paypal.com/gt/home" target="_blank">Paypal</a></button>
+        </div>
+        <form class="clr-form">
+            <div class="clr-form-control">
+              <label for="basic" class="clr-control-label">No. de tarjeta</label>
+              <div class="clr-control-container">
+                <div class="clr-input-wrapper">
+                  <input type="text" id="basic" placeholder="357159..." class="clr-input">
+                  <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                </div>
+                <span class="clr-subtext">No. frontal de la tarjeta</span>
+              </div>
+            </div>
+          </form>
+
+          <form class="clr-form">
+            <div class="clr-form-control">
+              <label for="basic" class="clr-control-label">No. de CVC</label>
+              <div class="clr-control-container">
+                <div class="clr-input-wrapper">
+                  <input type="text" id="basic" placeholder="***" class="clr-input">
+                  <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                </div>
+                <span class="clr-subtext">Metodo de seguridad</span>
+              </div>
+            </div>
+          </form>
+
+          <form class="clr-form">
+            <div class="clr-form-control">
+              <label for="basic" class="clr-control-label">Fecha de venciminto</label>
+              <div class="clr-control-container">
+                <div class="clr-input-wrapper">
+                  <input type="text" id="basic" placeholder="05/28" class="clr-input">
+                  <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                </div>
+                <span class="clr-subtext">Fecha que expira la tarjeta</span>
+              </div>
+            </div>
+          </form>
+
+    </clr-wizard-page>
+
+    <clr-wizard-page #pageFive>
+        <ng-template clrPageTitle>Finalizacion de la compra</ng-template>
+        <h4>Terminos y condiciones</h4>                                  
+            <h6>INFORMACIÓN RELEVANTE</h6>
+            <p>
+            Es requisito necesario para la adquisición de los productos que se ofrecen en este sitio, que lea y acepte los siguientes Términos y Condiciones que a continuación se redactan. El uso de nuestros servicios así como la compra de nuestros productos implicará que usted ha leído y aceptado los Términos y Condiciones de Uso en el presente documento. Todas los productos  que son ofrecidos por nuestro sitio web pudieran ser creadas, cobradas, enviadas o presentadas por una página web tercera y en tal caso estarían sujetas a sus propios Términos y Condiciones. En algunos casos, para adquirir un producto, será necesario el registro por parte del usuario, con ingreso de datos personales fidedignos y definición de una contraseña.
+            El usuario puede elegir y cambiar la clave para su acceso de administración de la cuenta en cualquier momento, en caso de que se haya registrado y que sea necesario para la compra de alguno de nuestros productos.  no asume la responsabilidad en caso de que entregue dicha clave a terceros.                                       
+            Todas las compras y transacciones que se lleven a cabo por medio de este sitio web, están sujetas a un proceso de confirmación y verificación, el cual podría incluir la verificación del stock y disponibilidad de producto, validación de la forma de pago, validación de la factura (en caso de existir) y el cumplimiento de las condiciones requeridas por el medio de pago seleccionado. En algunos casos puede que se requiera una verificación por medio de correo electrónico.                                        
+            Los precios de los productos ofrecidos en esta Tienda Online es válido solamente en las compras realizadas en este sitio web.
+            </p>
+        <h6>*LICENCIA</h6>
+            <p>A través de su sitio web concede una licencia para que los usuarios utilicen  los productos que son vendidos en este sitio web de acuerdo a los Términos y Condiciones que se describen en este documento.
+            </p>
+        <h6>*USO NO AUTORIZADO</h6>
+            <p>En caso de que aplique (para venta de software, templetes, u otro producto de diseño y programación) usted no puede colocar uno de nuestros productos, modificado o sin modificar, en un CD, sitio web o ningún otro medio y ofrecerlos para la redistribución o la reventa de ningún tipo.
+            </p>
+        <h6>*PROPIEDAD</h6>
+            <p>Usted no puede declarar propiedad intelectual o exclusiva a ninguno de nuestros productos, modificado o sin modificar. Todos los productos son propiedad  de los proveedores del contenido. En caso de que no se especifique lo contrario, nuestros productos se proporcionan  sin ningún tipo de garantía, expresa o implícita. En ningún esta compañía será  responsables de ningún daño incluyendo, pero no limitado a, daños directos, indirectos, especiales, fortuitos o consecuentes u otras pérdidas resultantes del uso o de la imposibilidad de utilizar nuestros productos.
+            </p>
+        <h6>*POLÍTICA DE REEMBOLSO Y GARANTÍA</h6>
+            <p>En el caso de productos que sean  mercancías irrevocables no-tangibles, no realizamos reembolsos después de que se envíe el producto, usted tiene la responsabilidad de entender antes de comprarlo.  Le pedimos que lea cuidadosamente antes de comprarlo. Hacemos solamente excepciones con esta regla cuando la descripción no se ajusta al producto. Hay algunos productos que pudieran tener garantía y posibilidad de reembolso pero este será especificado al comprar el producto. En tales casos la garantía solo cubrirá fallas de fábrica y sólo se hará efectiva cuando el producto se haya usado correctamente. La garantía no cubre averías o daños ocasionados por uso indebido. Los términos de la garantía están asociados a fallas de fabricación y funcionamiento en condiciones normales de los productos y sólo se harán efectivos estos términos si el equipo ha sido usado correctamente. Esto incluye:
+            
+            – De acuerdo a las especificaciones técnicas indicadas para cada producto.
+            – En condiciones ambientales acorde con las especificaciones indicadas por el fabricante.
+            – En uso específico para la función con que fue diseñado de fábrica.
+            – En condiciones de operación eléctricas acorde con las especificaciones y tolerancias indicadas.
+        </p>
+        <h6>*COMPROBACIÓN ANTIFRAUDE</h6>
+            <p>La compra del cliente puede ser aplazada para la comprobación antifraude. También puede ser suspendida por más tiempo para una investigación más rigurosa, para evitar transacciones fraudulentas.
+            </p>
+        <h6>*PRIVACIDAD</h6>
+        <p>Este sitio web  garantiza que la información personal que usted envía cuenta con la seguridad necesaria. Los datos ingresados por usuario o en el caso de requerir una validación de los pedidos no serán entregados a terceros, salvo que deba ser revelada en cumplimiento a una orden judicial o requerimientos legales.                                        
+           La suscripción a boletines de correos electrónicos publicitarios es voluntaria y podría ser seleccionada al momento de crear su cuenta.
+           reserva los derechos de cambiar o de modificar estos términos sin previo aviso.</p>
+
+
+
+        
+           <clr-checkbox-container clrInline>
+            <clr-checkbox-wrapper>
+              <input type="checkbox" clrCheckbox name="options" required value="option1" [(ngModel)]="options" />
+              <label>He leido y acepto los terminos de uso</label>
+            </clr-checkbox-wrapper>
+            <clr-control-helper></clr-control-helper>
+            <clr-control-error>Este paso es requerido</clr-control-error>
+          </clr-checkbox-container>
+    </clr-wizard-page>
+</clr-wizard>
+<!---------------------------------------->
+<!------------------wiz5----------------->
+<clr-wizard #wizard [(clrWizardOpen)]="wiz5" [clrWizardSize]="'lg'">
+    <clr-wizard-title>Compra de Creditos</clr-wizard-title>
+
+    <clr-wizard-button [type]="'cancel'">Cancel</clr-wizard-button>
+    <clr-wizard-button [type]="'previous'">Back</clr-wizard-button>
+    <clr-wizard-button [type]="'next'">Next</clr-wizard-button>
+    <clr-wizard-button [type]="'finish'" (click)="basic1 = true;restarMoneda(300)">Done</clr-wizard-button>
+
+    <clr-wizard-page>
+        <ng-template clrPageTitle>Descripcion de la compra</ng-template>
+
+        <div class="clr-row">
+                <div class="clr-row">
+                        <div class="clr-col-5">
+                            <span>
+                                    <div class="card" id="subcard-categorias">
+                                            <div class="card-img">
+                                                <img src="../../../assets/vs (1).jpg" alt="..." />
+                                            </div>
+                                            <div class="card-block">
+                                                <p class="card-text">
+                                                    Tarjeta: 20$ -- 2500 V-bucks
+                                                    <br>
+                                                Costo: 300 PS
+                                                </p>
+                                                <button class="btn btn-link btn-sm" (click)="wiz5 = true">Comprar</button>
+                                            </div>
+                                        </div>
+                            </span>
+                        </div>
+                        <div class="clr-col-5">
+                            <span>
+                                <h5>Descripcion</h5>
+                                <p>
+                                    El producto que usted desea adquirir es el paquete No.2 de Fortnite, esta compra no otorga ninguna ventaja competitiva ni en TournamentStorm; esta compra es de uso exclusivo dentro del juego y no se admiten devoluciones. *consulte terminos y condiciones*
+                                </p>
+                            </span>
+                        </div>
+                </div>
+
+        </div>
+
+        
+    </clr-wizard-page>
+
+    <clr-wizard-page>
+        <ng-template clrPageTitle>Datos personales Para la compra</ng-template>
+
+        <form clrForm>
+            <clr-input-container>
+              <label>Nombre del comprador</label>
+              <input placeholder="Nombre" clrInput [(ngModel)]="exampleThree" name="name" required />
+              <clr-control-helper></clr-control-helper>
+              <clr-control-error>Este campo es requerido</clr-control-error>
+            </clr-input-container>
+          </form>
+
+          <form clrForm>
+            <clr-input-container>
+              <label>No. Documento personal</label>
+              <input placeholder="Documento" clrInput [(ngModel)]="exampleThree1" name="doc" required />
+              <clr-control-helper></clr-control-helper>
+              <clr-control-error>Este campo es requerido</clr-control-error>
+            </clr-input-container>
+          </form>
+
+          <form clrForm>
+            <clr-input-container>
+              <label>País</label>
+              <input placeholder="País" clrInput [(ngModel)]="exampleThree2" name="pais" required />
+              <clr-control-helper></clr-control-helper>
+              <clr-control-error>Este campo es requerido</clr-control-error>
+            </clr-input-container>
+          </form>
+
+          <form clrForm>
+            <clr-input-container>
+              <label>Localidad</label>
+              <input placeholder="Departamento/Estado" clrInput [(ngModel)]="exampleThree3" name="depa" required />
+              <clr-control-helper></clr-control-helper>
+              <clr-control-error>Este campo es requerido</clr-control-error>
+            </clr-input-container>
+          </form>
+    </clr-wizard-page>
+
+    <clr-wizard-page #pageThree>
+        <ng-template clrPageTitle>Metodo de pago</ng-template>
+        <div class="btn-group btn-inverse">
+            <button class="btn">Tarjeta de Credito/Debito</button>
+            <button class="btn"><a href="https://www.paypal.com/gt/home" target="_blank">Paypal</a></button>
+        </div>
+        <form class="clr-form">
+            <div class="clr-form-control">
+              <label for="basic" class="clr-control-label">No. de tarjeta</label>
+              <div class="clr-control-container">
+                <div class="clr-input-wrapper">
+                  <input type="text" id="basic" placeholder="357159..." class="clr-input">
+                  <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                </div>
+                <span class="clr-subtext">No. frontal de la tarjeta</span>
+              </div>
+            </div>
+          </form>
+
+          <form class="clr-form">
+            <div class="clr-form-control">
+              <label for="basic" class="clr-control-label">No. de CVC</label>
+              <div class="clr-control-container">
+                <div class="clr-input-wrapper">
+                  <input type="text" id="basic" placeholder="***" class="clr-input">
+                  <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                </div>
+                <span class="clr-subtext">Metodo de seguridad</span>
+              </div>
+            </div>
+          </form>
+
+          <form class="clr-form">
+            <div class="clr-form-control">
+              <label for="basic" class="clr-control-label">Fecha de venciminto</label>
+              <div class="clr-control-container">
+                <div class="clr-input-wrapper">
+                  <input type="text" id="basic" placeholder="05/28" class="clr-input">
+                  <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                </div>
+                <span class="clr-subtext">Fecha que expira la tarjeta</span>
+              </div>
+            </div>
+          </form>
+
+    </clr-wizard-page>
+
+    <clr-wizard-page #pageFive>
+        <ng-template clrPageTitle>Finalizacion de la compra</ng-template>
+        <h4>Terminos y condiciones</h4>                                  
+            <h6>INFORMACIÓN RELEVANTE</h6>
+            <p>
+            Es requisito necesario para la adquisición de los productos que se ofrecen en este sitio, que lea y acepte los siguientes Términos y Condiciones que a continuación se redactan. El uso de nuestros servicios así como la compra de nuestros productos implicará que usted ha leído y aceptado los Términos y Condiciones de Uso en el presente documento. Todas los productos  que son ofrecidos por nuestro sitio web pudieran ser creadas, cobradas, enviadas o presentadas por una página web tercera y en tal caso estarían sujetas a sus propios Términos y Condiciones. En algunos casos, para adquirir un producto, será necesario el registro por parte del usuario, con ingreso de datos personales fidedignos y definición de una contraseña.
+            El usuario puede elegir y cambiar la clave para su acceso de administración de la cuenta en cualquier momento, en caso de que se haya registrado y que sea necesario para la compra de alguno de nuestros productos.  no asume la responsabilidad en caso de que entregue dicha clave a terceros.                                       
+            Todas las compras y transacciones que se lleven a cabo por medio de este sitio web, están sujetas a un proceso de confirmación y verificación, el cual podría incluir la verificación del stock y disponibilidad de producto, validación de la forma de pago, validación de la factura (en caso de existir) y el cumplimiento de las condiciones requeridas por el medio de pago seleccionado. En algunos casos puede que se requiera una verificación por medio de correo electrónico.                                        
+            Los precios de los productos ofrecidos en esta Tienda Online es válido solamente en las compras realizadas en este sitio web.
+            </p>
+        <h6>*LICENCIA</h6>
+            <p>A través de su sitio web concede una licencia para que los usuarios utilicen  los productos que son vendidos en este sitio web de acuerdo a los Términos y Condiciones que se describen en este documento.
+            </p>
+        <h6>*USO NO AUTORIZADO</h6>
+            <p>En caso de que aplique (para venta de software, templetes, u otro producto de diseño y programación) usted no puede colocar uno de nuestros productos, modificado o sin modificar, en un CD, sitio web o ningún otro medio y ofrecerlos para la redistribución o la reventa de ningún tipo.
+            </p>
+        <h6>*PROPIEDAD</h6>
+            <p>Usted no puede declarar propiedad intelectual o exclusiva a ninguno de nuestros productos, modificado o sin modificar. Todos los productos son propiedad  de los proveedores del contenido. En caso de que no se especifique lo contrario, nuestros productos se proporcionan  sin ningún tipo de garantía, expresa o implícita. En ningún esta compañía será  responsables de ningún daño incluyendo, pero no limitado a, daños directos, indirectos, especiales, fortuitos o consecuentes u otras pérdidas resultantes del uso o de la imposibilidad de utilizar nuestros productos.
+            </p>
+        <h6>*POLÍTICA DE REEMBOLSO Y GARANTÍA</h6>
+            <p>En el caso de productos que sean  mercancías irrevocables no-tangibles, no realizamos reembolsos después de que se envíe el producto, usted tiene la responsabilidad de entender antes de comprarlo.  Le pedimos que lea cuidadosamente antes de comprarlo. Hacemos solamente excepciones con esta regla cuando la descripción no se ajusta al producto. Hay algunos productos que pudieran tener garantía y posibilidad de reembolso pero este será especificado al comprar el producto. En tales casos la garantía solo cubrirá fallas de fábrica y sólo se hará efectiva cuando el producto se haya usado correctamente. La garantía no cubre averías o daños ocasionados por uso indebido. Los términos de la garantía están asociados a fallas de fabricación y funcionamiento en condiciones normales de los productos y sólo se harán efectivos estos términos si el equipo ha sido usado correctamente. Esto incluye:
+            
+            – De acuerdo a las especificaciones técnicas indicadas para cada producto.
+            – En condiciones ambientales acorde con las especificaciones indicadas por el fabricante.
+            – En uso específico para la función con que fue diseñado de fábrica.
+            – En condiciones de operación eléctricas acorde con las especificaciones y tolerancias indicadas.
+        </p>
+        <h6>*COMPROBACIÓN ANTIFRAUDE</h6>
+            <p>La compra del cliente puede ser aplazada para la comprobación antifraude. También puede ser suspendida por más tiempo para una investigación más rigurosa, para evitar transacciones fraudulentas.
+            </p>
+        <h6>*PRIVACIDAD</h6>
+        <p>Este sitio web  garantiza que la información personal que usted envía cuenta con la seguridad necesaria. Los datos ingresados por usuario o en el caso de requerir una validación de los pedidos no serán entregados a terceros, salvo que deba ser revelada en cumplimiento a una orden judicial o requerimientos legales.                                        
+           La suscripción a boletines de correos electrónicos publicitarios es voluntaria y podría ser seleccionada al momento de crear su cuenta.
+           reserva los derechos de cambiar o de modificar estos términos sin previo aviso.</p>
+
+
+
+        
+           <clr-checkbox-container clrInline>
+            <clr-checkbox-wrapper>
+              <input type="checkbox" clrCheckbox name="options" required value="option1" [(ngModel)]="options" />
+              <label>He leido y acepto los terminos de uso</label>
+            </clr-checkbox-wrapper>
+            <clr-control-helper></clr-control-helper>
+            <clr-control-error>Este paso es requerido</clr-control-error>
+          </clr-checkbox-container>
+    </clr-wizard-page>
+</clr-wizard>
+<!---------------------------------------->
+<!------------------wiz6----------------->
+<clr-wizard #wizard [(clrWizardOpen)]="wiz6" [clrWizardSize]="'lg'">
+                                <clr-wizard-title>Compra de Creditos</clr-wizard-title>
+                            
+                                <clr-wizard-button [type]="'cancel'">Cancel</clr-wizard-button>
+                                <clr-wizard-button [type]="'previous'">Back</clr-wizard-button>
+                                <clr-wizard-button [type]="'next'">Next</clr-wizard-button>
+                                <clr-wizard-button [type]="'finish'" (click)="basic1 = true;restarMoneda(450)">Done</clr-wizard-button>
+                            
+                                <clr-wizard-page>
+                                    <ng-template clrPageTitle>Descripcion de la compra</ng-template>
+
+                                    <div class="clr-row">
+                                            <div class="clr-row">
+                                                    <div class="clr-col-5">
+                                                        <span>
+                                                                <div class="card" id="subcard-categorias">
+                                                                        <div class="card-img">
+                                                                            <img src="../../../assets/vs (1).jpg" alt="..." />
+                                                                        </div>
+                                                                        <div class="card-block">
+                                                                            <p class="card-text">
+                                                                                Tarjeta: 35$ -- 4500 V-bucks
+                                                                                <br>
+                                                                        Costo: 450 PS
+                                                                            </p>
+                                                                            <button class="btn btn-link btn-sm" (click)="wiz6 = true">Comprar</button>
+                                                                        </div>
+                                                                    </div>
+                                                        </span>
+                                                    </div>
+                                                    <div class="clr-col-5">
+                                                        <span>
+                                                            <h5>Descripcion</h5>
+                                                            <p>
+                                                                El producto que usted desea adquirir es el paquete No.3 de Fortnite, esta compra no otorga ninguna ventaja competitiva ni en TournamentStorm; esta compra es de uso exclusivo dentro del juego y no se admiten devoluciones. *consulte terminos y condiciones*
+                                                            </p>
+                                                        </span>
+                                                    </div>
+                                            </div>
+                                    </div>
+
+                                    
+                                </clr-wizard-page>
+                            
+                                <clr-wizard-page>
+                                    <ng-template clrPageTitle>Datos personales Para la compra</ng-template>
+
+                                    <form clrForm>
+                                        <clr-input-container>
+                                          <label>Nombre del comprador</label>
+                                          <input placeholder="Nombre" clrInput [(ngModel)]="exampleThree" name="name" required />
+                                          <clr-control-helper></clr-control-helper>
+                                          <clr-control-error>Este campo es requerido</clr-control-error>
+                                        </clr-input-container>
+                                      </form>
+
+                                      <form clrForm>
+                                        <clr-input-container>
+                                          <label>No. Documento personal</label>
+                                          <input placeholder="Documento" clrInput [(ngModel)]="exampleThree1" name="doc" required />
+                                          <clr-control-helper></clr-control-helper>
+                                          <clr-control-error>Este campo es requerido</clr-control-error>
+                                        </clr-input-container>
+                                      </form>
+
+                                      <form clrForm>
+                                        <clr-input-container>
+                                          <label>País</label>
+                                          <input placeholder="País" clrInput [(ngModel)]="exampleThree2" name="pais" required />
+                                          <clr-control-helper></clr-control-helper>
+                                          <clr-control-error>Este campo es requerido</clr-control-error>
+                                        </clr-input-container>
+                                      </form>
+
+                                      <form clrForm>
+                                        <clr-input-container>
+                                          <label>Localidad</label>
+                                          <input placeholder="Departamento/Estado" clrInput [(ngModel)]="exampleThree3" name="depa" required />
+                                          <clr-control-helper></clr-control-helper>
+                                          <clr-control-error>Este campo es requerido</clr-control-error>
+                                        </clr-input-container>
+                                      </form>
+                                </clr-wizard-page>
+                            
+                                <clr-wizard-page #pageThree>
+                                    <ng-template clrPageTitle>Metodo de pago</ng-template>
+                                    <div class="btn-group btn-inverse">
+                                        <button class="btn">Tarjeta de Credito/Debito</button>
+                                        <button class="btn"><a href="https://www.paypal.com/gt/home" target="_blank">Paypal</a></button>
+                                    </div>
+                                    <form class="clr-form">
+                                        <div class="clr-form-control">
+                                          <label for="basic" class="clr-control-label">No. de tarjeta</label>
+                                          <div class="clr-control-container">
+                                            <div class="clr-input-wrapper">
+                                              <input type="text" id="basic" placeholder="357159..." class="clr-input">
+                                              <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                                            </div>
+                                            <span class="clr-subtext">No. frontal de la tarjeta</span>
+                                          </div>
+                                        </div>
+                                      </form>
+
+                                      <form class="clr-form">
+                                        <div class="clr-form-control">
+                                          <label for="basic" class="clr-control-label">No. de CVC</label>
+                                          <div class="clr-control-container">
+                                            <div class="clr-input-wrapper">
+                                              <input type="text" id="basic" placeholder="***" class="clr-input">
+                                              <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                                            </div>
+                                            <span class="clr-subtext">Metodo de seguridad</span>
+                                          </div>
+                                        </div>
+                                      </form>
+
+                                      <form class="clr-form">
+                                        <div class="clr-form-control">
+                                          <label for="basic" class="clr-control-label">Fecha de venciminto</label>
+                                          <div class="clr-control-container">
+                                            <div class="clr-input-wrapper">
+                                              <input type="text" id="basic" placeholder="05/28" class="clr-input">
+                                              <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                                            </div>
+                                            <span class="clr-subtext">Fecha que expira la tarjeta</span>
+                                          </div>
+                                        </div>
+                                      </form>
+
+                                </clr-wizard-page>
+                            
+                                <clr-wizard-page #pageFive>
+                                    <ng-template clrPageTitle>Finalizacion de la compra</ng-template>
+                                    <h4>Terminos y condiciones</h4>                                  
+                                        <h6>INFORMACIÓN RELEVANTE</h6>
+                                        <p>
+                                        Es requisito necesario para la adquisición de los productos que se ofrecen en este sitio, que lea y acepte los siguientes Términos y Condiciones que a continuación se redactan. El uso de nuestros servicios así como la compra de nuestros productos implicará que usted ha leído y aceptado los Términos y Condiciones de Uso en el presente documento. Todas los productos  que son ofrecidos por nuestro sitio web pudieran ser creadas, cobradas, enviadas o presentadas por una página web tercera y en tal caso estarían sujetas a sus propios Términos y Condiciones. En algunos casos, para adquirir un producto, será necesario el registro por parte del usuario, con ingreso de datos personales fidedignos y definición de una contraseña.
+                                        El usuario puede elegir y cambiar la clave para su acceso de administración de la cuenta en cualquier momento, en caso de que se haya registrado y que sea necesario para la compra de alguno de nuestros productos.  no asume la responsabilidad en caso de que entregue dicha clave a terceros.                                       
+                                        Todas las compras y transacciones que se lleven a cabo por medio de este sitio web, están sujetas a un proceso de confirmación y verificación, el cual podría incluir la verificación del stock y disponibilidad de producto, validación de la forma de pago, validación de la factura (en caso de existir) y el cumplimiento de las condiciones requeridas por el medio de pago seleccionado. En algunos casos puede que se requiera una verificación por medio de correo electrónico.                                        
+                                        Los precios de los productos ofrecidos en esta Tienda Online es válido solamente en las compras realizadas en este sitio web.
+                                        </p>
+                                    <h6>*LICENCIA</h6>
+                                        <p>A través de su sitio web concede una licencia para que los usuarios utilicen  los productos que son vendidos en este sitio web de acuerdo a los Términos y Condiciones que se describen en este documento.
+                                        </p>
+                                    <h6>*USO NO AUTORIZADO</h6>
+                                        <p>En caso de que aplique (para venta de software, templetes, u otro producto de diseño y programación) usted no puede colocar uno de nuestros productos, modificado o sin modificar, en un CD, sitio web o ningún otro medio y ofrecerlos para la redistribución o la reventa de ningún tipo.
+                                        </p>
+                                    <h6>*PROPIEDAD</h6>
+                                        <p>Usted no puede declarar propiedad intelectual o exclusiva a ninguno de nuestros productos, modificado o sin modificar. Todos los productos son propiedad  de los proveedores del contenido. En caso de que no se especifique lo contrario, nuestros productos se proporcionan  sin ningún tipo de garantía, expresa o implícita. En ningún esta compañía será  responsables de ningún daño incluyendo, pero no limitado a, daños directos, indirectos, especiales, fortuitos o consecuentes u otras pérdidas resultantes del uso o de la imposibilidad de utilizar nuestros productos.
+                                        </p>
+                                    <h6>*POLÍTICA DE REEMBOLSO Y GARANTÍA</h6>
+                                        <p>En el caso de productos que sean  mercancías irrevocables no-tangibles, no realizamos reembolsos después de que se envíe el producto, usted tiene la responsabilidad de entender antes de comprarlo.  Le pedimos que lea cuidadosamente antes de comprarlo. Hacemos solamente excepciones con esta regla cuando la descripción no se ajusta al producto. Hay algunos productos que pudieran tener garantía y posibilidad de reembolso pero este será especificado al comprar el producto. En tales casos la garantía solo cubrirá fallas de fábrica y sólo se hará efectiva cuando el producto se haya usado correctamente. La garantía no cubre averías o daños ocasionados por uso indebido. Los términos de la garantía están asociados a fallas de fabricación y funcionamiento en condiciones normales de los productos y sólo se harán efectivos estos términos si el equipo ha sido usado correctamente. Esto incluye:
+                                        
+                                        – De acuerdo a las especificaciones técnicas indicadas para cada producto.
+                                        – En condiciones ambientales acorde con las especificaciones indicadas por el fabricante.
+                                        – En uso específico para la función con que fue diseñado de fábrica.
+                                        – En condiciones de operación eléctricas acorde con las especificaciones y tolerancias indicadas.
+                                    </p>
+                                    <h6>*COMPROBACIÓN ANTIFRAUDE</h6>
+                                        <p>La compra del cliente puede ser aplazada para la comprobación antifraude. También puede ser suspendida por más tiempo para una investigación más rigurosa, para evitar transacciones fraudulentas.
+                                        </p>
+                                    <h6>*PRIVACIDAD</h6>
+                                    <p>Este sitio web  garantiza que la información personal que usted envía cuenta con la seguridad necesaria. Los datos ingresados por usuario o en el caso de requerir una validación de los pedidos no serán entregados a terceros, salvo que deba ser revelada en cumplimiento a una orden judicial o requerimientos legales.                                        
+                                       La suscripción a boletines de correos electrónicos publicitarios es voluntaria y podría ser seleccionada al momento de crear su cuenta.
+                                       reserva los derechos de cambiar o de modificar estos términos sin previo aviso.</p>
+
+
+
+                                    
+                                       <clr-checkbox-container clrInline>
+                                        <clr-checkbox-wrapper>
+                                          <input type="checkbox" clrCheckbox name="options" required value="option1" [(ngModel)]="options" />
+                                          <label>He leido y acepto los terminos de uso</label>
+                                        </clr-checkbox-wrapper>
+                                        <clr-control-helper></clr-control-helper>
+                                        <clr-control-error>Este paso es requerido</clr-control-error>
+                                      </clr-checkbox-container>
+                                </clr-wizard-page>
+</clr-wizard>
+<!---------------------------------------->
+
+
+<!------------------wiz7----------------->
+<clr-wizard #wizard [(clrWizardOpen)]="wiz7" [clrWizardSize]="'lg'">
+    <clr-wizard-title>Compra de Creditos</clr-wizard-title>
+
+    <clr-wizard-button [type]="'cancel'">Cancel</clr-wizard-button>
+    <clr-wizard-button [type]="'previous'">Back</clr-wizard-button>
+    <clr-wizard-button [type]="'next'">Next</clr-wizard-button>
+    <clr-wizard-button [type]="'finish'" (click)="basic1 = true;restarMoneda(50)">Done</clr-wizard-button>
+
+    <clr-wizard-page>
+        <ng-template clrPageTitle>Descripcion de la compra</ng-template>
+
+        <div class="clr-row">
+                <div class="clr-row">
+                        <div class="clr-col-5">
+                            <span>
+                                    <div class="card" id="subcard-categorias">
+                                            <div class="card-img">
+                                                <img src="../../../assets/vs (1).jpg" alt="..." />
+                                            </div>
+                                            <div class="card-block">
+                                                <p class="card-text">
+                                                    Tarjeta: 5$ -- 120K
+                                                    <br>
+                                                Costo: 50 PS
+                                                </p>
+                                            </div>
+                                        </div>
+                            </span>
+                        </div>
+                        <div class="clr-col-5">
+                            <span>
+                                <h5>Descripcion</h5>
+                                <p>
+                                    El producto que usted desea adquirir es el paquete No.1 de Fifa, esta compra no otorga ninguna ventaja competitiva ni en TournamentStorm; esta compra es de uso exclusivo dentro del juego y no se admiten devoluciones. *consulte terminos y condiciones*
+                                </p>
+                            </span>
+                        </div>
+                </div>
+
+        </div>
+
+        
+    </clr-wizard-page>
+
+    <clr-wizard-page>
+        <ng-template clrPageTitle>Datos personales Para la compra</ng-template>
+
+        <form clrForm>
+            <clr-input-container>
+              <label>Nombre del comprador</label>
+              <input placeholder="Nombre" clrInput [(ngModel)]="exampleThree" name="name" required />
+              <clr-control-helper></clr-control-helper>
+              <clr-control-error>Este campo es requerido</clr-control-error>
+            </clr-input-container>
+          </form>
+
+          <form clrForm>
+            <clr-input-container>
+              <label>No. Documento personal</label>
+              <input placeholder="Documento" clrInput [(ngModel)]="exampleThree1" name="doc" required />
+              <clr-control-helper></clr-control-helper>
+              <clr-control-error>Este campo es requerido</clr-control-error>
+            </clr-input-container>
+          </form>
+
+          <form clrForm>
+            <clr-input-container>
+              <label>País</label>
+              <input placeholder="País" clrInput [(ngModel)]="exampleThree2" name="pais" required />
+              <clr-control-helper></clr-control-helper>
+              <clr-control-error>Este campo es requerido</clr-control-error>
+            </clr-input-container>
+          </form>
+
+          <form clrForm>
+            <clr-input-container>
+              <label>Localidad</label>
+              <input placeholder="Departamento/Estado" clrInput [(ngModel)]="exampleThree3" name="depa" required />
+              <clr-control-helper></clr-control-helper>
+              <clr-control-error>Este campo es requerido</clr-control-error>
+            </clr-input-container>
+          </form>
+    </clr-wizard-page>
+
+    <clr-wizard-page #pageThree>
+        <ng-template clrPageTitle>Metodo de pago</ng-template>
+        <div class="btn-group btn-inverse">
+            <button class="btn">Tarjeta de Credito/Debito</button>
+            <button class="btn"><a href="https://www.paypal.com/gt/home" target="_blank">Paypal</a></button>
+        </div>
+        <form class="clr-form">
+            <div class="clr-form-control">
+              <label for="basic" class="clr-control-label">No. de tarjeta</label>
+              <div class="clr-control-container">
+                <div class="clr-input-wrapper">
+                  <input type="text" id="basic" placeholder="357159..." class="clr-input">
+                  <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                </div>
+                <span class="clr-subtext">No. frontal de la tarjeta</span>
+              </div>
+            </div>
+          </form>
+
+          <form class="clr-form">
+            <div class="clr-form-control">
+              <label for="basic" class="clr-control-label">No. de CVC</label>
+              <div class="clr-control-container">
+                <div class="clr-input-wrapper">
+                  <input type="text" id="basic" placeholder="***" class="clr-input">
+                  <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                </div>
+                <span class="clr-subtext">Metodo de seguridad</span>
+              </div>
+            </div>
+          </form>
+
+          <form class="clr-form">
+            <div class="clr-form-control">
+              <label for="basic" class="clr-control-label">Fecha de venciminto</label>
+              <div class="clr-control-container">
+                <div class="clr-input-wrapper">
+                  <input type="text" id="basic" placeholder="05/28" class="clr-input">
+                  <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                </div>
+                <span class="clr-subtext">Fecha que expira la tarjeta</span>
+              </div>
+            </div>
+          </form>
+
+    </clr-wizard-page>
+
+    <clr-wizard-page #pageFive>
+        <ng-template clrPageTitle>Finalizacion de la compra</ng-template>
+        <h4>Terminos y condiciones</h4>                                  
+            <h6>INFORMACIÓN RELEVANTE</h6>
+            <p>
+            Es requisito necesario para la adquisición de los productos que se ofrecen en este sitio, que lea y acepte los siguientes Términos y Condiciones que a continuación se redactan. El uso de nuestros servicios así como la compra de nuestros productos implicará que usted ha leído y aceptado los Términos y Condiciones de Uso en el presente documento. Todas los productos  que son ofrecidos por nuestro sitio web pudieran ser creadas, cobradas, enviadas o presentadas por una página web tercera y en tal caso estarían sujetas a sus propios Términos y Condiciones. En algunos casos, para adquirir un producto, será necesario el registro por parte del usuario, con ingreso de datos personales fidedignos y definición de una contraseña.
+            El usuario puede elegir y cambiar la clave para su acceso de administración de la cuenta en cualquier momento, en caso de que se haya registrado y que sea necesario para la compra de alguno de nuestros productos.  no asume la responsabilidad en caso de que entregue dicha clave a terceros.                                       
+            Todas las compras y transacciones que se lleven a cabo por medio de este sitio web, están sujetas a un proceso de confirmación y verificación, el cual podría incluir la verificación del stock y disponibilidad de producto, validación de la forma de pago, validación de la factura (en caso de existir) y el cumplimiento de las condiciones requeridas por el medio de pago seleccionado. En algunos casos puede que se requiera una verificación por medio de correo electrónico.                                        
+            Los precios de los productos ofrecidos en esta Tienda Online es válido solamente en las compras realizadas en este sitio web.
+            </p>
+        <h6>*LICENCIA</h6>
+            <p>A través de su sitio web concede una licencia para que los usuarios utilicen  los productos que son vendidos en este sitio web de acuerdo a los Términos y Condiciones que se describen en este documento.
+            </p>
+        <h6>*USO NO AUTORIZADO</h6>
+            <p>En caso de que aplique (para venta de software, templetes, u otro producto de diseño y programación) usted no puede colocar uno de nuestros productos, modificado o sin modificar, en un CD, sitio web o ningún otro medio y ofrecerlos para la redistribución o la reventa de ningún tipo.
+            </p>
+        <h6>*PROPIEDAD</h6>
+            <p>Usted no puede declarar propiedad intelectual o exclusiva a ninguno de nuestros productos, modificado o sin modificar. Todos los productos son propiedad  de los proveedores del contenido. En caso de que no se especifique lo contrario, nuestros productos se proporcionan  sin ningún tipo de garantía, expresa o implícita. En ningún esta compañía será  responsables de ningún daño incluyendo, pero no limitado a, daños directos, indirectos, especiales, fortuitos o consecuentes u otras pérdidas resultantes del uso o de la imposibilidad de utilizar nuestros productos.
+            </p>
+        <h6>*POLÍTICA DE REEMBOLSO Y GARANTÍA</h6>
+            <p>En el caso de productos que sean  mercancías irrevocables no-tangibles, no realizamos reembolsos después de que se envíe el producto, usted tiene la responsabilidad de entender antes de comprarlo.  Le pedimos que lea cuidadosamente antes de comprarlo. Hacemos solamente excepciones con esta regla cuando la descripción no se ajusta al producto. Hay algunos productos que pudieran tener garantía y posibilidad de reembolso pero este será especificado al comprar el producto. En tales casos la garantía solo cubrirá fallas de fábrica y sólo se hará efectiva cuando el producto se haya usado correctamente. La garantía no cubre averías o daños ocasionados por uso indebido. Los términos de la garantía están asociados a fallas de fabricación y funcionamiento en condiciones normales de los productos y sólo se harán efectivos estos términos si el equipo ha sido usado correctamente. Esto incluye:
+            
+            – De acuerdo a las especificaciones técnicas indicadas para cada producto.
+            – En condiciones ambientales acorde con las especificaciones indicadas por el fabricante.
+            – En uso específico para la función con que fue diseñado de fábrica.
+            – En condiciones de operación eléctricas acorde con las especificaciones y tolerancias indicadas.
+        </p>
+        <h6>*COMPROBACIÓN ANTIFRAUDE</h6>
+            <p>La compra del cliente puede ser aplazada para la comprobación antifraude. También puede ser suspendida por más tiempo para una investigación más rigurosa, para evitar transacciones fraudulentas.
+            </p>
+        <h6>*PRIVACIDAD</h6>
+        <p>Este sitio web  garantiza que la información personal que usted envía cuenta con la seguridad necesaria. Los datos ingresados por usuario o en el caso de requerir una validación de los pedidos no serán entregados a terceros, salvo que deba ser revelada en cumplimiento a una orden judicial o requerimientos legales.                                        
+           La suscripción a boletines de correos electrónicos publicitarios es voluntaria y podría ser seleccionada al momento de crear su cuenta.
+           reserva los derechos de cambiar o de modificar estos términos sin previo aviso.</p>
+
+
+
+        
+           <clr-checkbox-container clrInline>
+            <clr-checkbox-wrapper>
+              <input type="checkbox" clrCheckbox name="options" required value="option1" [(ngModel)]="options" />
+              <label>He leido y acepto los terminos de uso</label>
+            </clr-checkbox-wrapper>
+            <clr-control-helper></clr-control-helper>
+            <clr-control-error>Este paso es requerido</clr-control-error>
+          </clr-checkbox-container>
+    </clr-wizard-page>
+</clr-wizard>
+<!---------------------------------------->
+<!------------------wiz8----------------->
+<clr-wizard #wizard [(clrWizardOpen)]="wiz8" [clrWizardSize]="'lg'">
+    <clr-wizard-title>Compra de Creditos</clr-wizard-title>
+
+    <clr-wizard-button [type]="'cancel'">Cancel</clr-wizard-button>
+    <clr-wizard-button [type]="'previous'">Back</clr-wizard-button>
+    <clr-wizard-button [type]="'next'">Next</clr-wizard-button>
+    <clr-wizard-button [type]="'finish'" (click)="basic1 = true;restarMoneda(180)">Done</clr-wizard-button>
+
+    <clr-wizard-page>
+        <ng-template clrPageTitle>Descripcion de la compra</ng-template>
+
+        <div class="clr-row">
+                <div class="clr-row">
+                        <div class="clr-col-5">
+                            <span>
+                                    <div class="card" id="subcard-categorias">
+                                            <div class="card-img">
+                                                <img src="../../../assets/vs (1).jpg" alt="..." />
+                                            </div>
+                                            <div class="card-block">
+                                                <p class="card-text">
+                                                    Tarjeta: 20$ -- 500K
+                                                    <br>
+                                            Costo: 180 PS
+                                                </p>
+                                            </div>
+                                        </div>
+                            </span>
+                        </div>
+                        <div class="clr-col-5">
+                            <span>
+                                <h5>Descripcion</h5>
+                                <p>
+                                    El producto que usted desea adquirir es el paquete No.2 de Fifa, esta compra no otorga ninguna ventaja competitiva ni en TournamentStorm; esta compra es de uso exclusivo dentro del juego y no se admiten devoluciones. *consulte terminos y condiciones*
+                                </p>
+                            </span>
+                        </div>
+                </div>
+
+        </div>
+
+        
+    </clr-wizard-page>
+
+    <clr-wizard-page>
+        <ng-template clrPageTitle>Datos personales Para la compra</ng-template>
+
+        <form clrForm>
+            <clr-input-container>
+              <label>Nombre del comprador</label>
+              <input placeholder="Nombre" clrInput [(ngModel)]="exampleThree" name="name" required />
+              <clr-control-helper></clr-control-helper>
+              <clr-control-error>Este campo es requerido</clr-control-error>
+            </clr-input-container>
+          </form>
+
+          <form clrForm>
+            <clr-input-container>
+              <label>No. Documento personal</label>
+              <input placeholder="Documento" clrInput [(ngModel)]="exampleThree1" name="doc" required />
+              <clr-control-helper></clr-control-helper>
+              <clr-control-error>Este campo es requerido</clr-control-error>
+            </clr-input-container>
+          </form>
+
+          <form clrForm>
+            <clr-input-container>
+              <label>País</label>
+              <input placeholder="País" clrInput [(ngModel)]="exampleThree2" name="pais" required />
+              <clr-control-helper></clr-control-helper>
+              <clr-control-error>Este campo es requerido</clr-control-error>
+            </clr-input-container>
+          </form>
+
+          <form clrForm>
+            <clr-input-container>
+              <label>Localidad</label>
+              <input placeholder="Departamento/Estado" clrInput [(ngModel)]="exampleThree3" name="depa" required />
+              <clr-control-helper></clr-control-helper>
+              <clr-control-error>Este campo es requerido</clr-control-error>
+            </clr-input-container>
+          </form>
+    </clr-wizard-page>
+
+    <clr-wizard-page #pageThree>
+        <ng-template clrPageTitle>Metodo de pago</ng-template>
+        <div class="btn-group btn-inverse">
+            <button class="btn">Tarjeta de Credito/Debito</button>
+            <button class="btn"><a href="https://www.paypal.com/gt/home" target="_blank">Paypal</a></button>
+        </div>
+        <form class="clr-form">
+            <div class="clr-form-control">
+              <label for="basic" class="clr-control-label">No. de tarjeta</label>
+              <div class="clr-control-container">
+                <div class="clr-input-wrapper">
+                  <input type="text" id="basic" placeholder="357159..." class="clr-input">
+                  <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                </div>
+                <span class="clr-subtext">No. frontal de la tarjeta</span>
+              </div>
+            </div>
+          </form>
+
+          <form class="clr-form">
+            <div class="clr-form-control">
+              <label for="basic" class="clr-control-label">No. de CVC</label>
+              <div class="clr-control-container">
+                <div class="clr-input-wrapper">
+                  <input type="text" id="basic" placeholder="***" class="clr-input">
+                  <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                </div>
+                <span class="clr-subtext">Metodo de seguridad</span>
+              </div>
+            </div>
+          </form>
+
+          <form class="clr-form">
+            <div class="clr-form-control">
+              <label for="basic" class="clr-control-label">Fecha de venciminto</label>
+              <div class="clr-control-container">
+                <div class="clr-input-wrapper">
+                  <input type="text" id="basic" placeholder="05/28" class="clr-input">
+                  <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                </div>
+                <span class="clr-subtext">Fecha que expira la tarjeta</span>
+              </div>
+            </div>
+          </form>
+
+    </clr-wizard-page>
+
+    <clr-wizard-page #pageFive>
+        <ng-template clrPageTitle>Finalizacion de la compra</ng-template>
+        <h4>Terminos y condiciones</h4>                                  
+            <h6>INFORMACIÓN RELEVANTE</h6>
+            <p>
+            Es requisito necesario para la adquisición de los productos que se ofrecen en este sitio, que lea y acepte los siguientes Términos y Condiciones que a continuación se redactan. El uso de nuestros servicios así como la compra de nuestros productos implicará que usted ha leído y aceptado los Términos y Condiciones de Uso en el presente documento. Todas los productos  que son ofrecidos por nuestro sitio web pudieran ser creadas, cobradas, enviadas o presentadas por una página web tercera y en tal caso estarían sujetas a sus propios Términos y Condiciones. En algunos casos, para adquirir un producto, será necesario el registro por parte del usuario, con ingreso de datos personales fidedignos y definición de una contraseña.
+            El usuario puede elegir y cambiar la clave para su acceso de administración de la cuenta en cualquier momento, en caso de que se haya registrado y que sea necesario para la compra de alguno de nuestros productos.  no asume la responsabilidad en caso de que entregue dicha clave a terceros.                                       
+            Todas las compras y transacciones que se lleven a cabo por medio de este sitio web, están sujetas a un proceso de confirmación y verificación, el cual podría incluir la verificación del stock y disponibilidad de producto, validación de la forma de pago, validación de la factura (en caso de existir) y el cumplimiento de las condiciones requeridas por el medio de pago seleccionado. En algunos casos puede que se requiera una verificación por medio de correo electrónico.                                        
+            Los precios de los productos ofrecidos en esta Tienda Online es válido solamente en las compras realizadas en este sitio web.
+            </p>
+        <h6>*LICENCIA</h6>
+            <p>A través de su sitio web concede una licencia para que los usuarios utilicen  los productos que son vendidos en este sitio web de acuerdo a los Términos y Condiciones que se describen en este documento.
+            </p>
+        <h6>*USO NO AUTORIZADO</h6>
+            <p>En caso de que aplique (para venta de software, templetes, u otro producto de diseño y programación) usted no puede colocar uno de nuestros productos, modificado o sin modificar, en un CD, sitio web o ningún otro medio y ofrecerlos para la redistribución o la reventa de ningún tipo.
+            </p>
+        <h6>*PROPIEDAD</h6>
+            <p>Usted no puede declarar propiedad intelectual o exclusiva a ninguno de nuestros productos, modificado o sin modificar. Todos los productos son propiedad  de los proveedores del contenido. En caso de que no se especifique lo contrario, nuestros productos se proporcionan  sin ningún tipo de garantía, expresa o implícita. En ningún esta compañía será  responsables de ningún daño incluyendo, pero no limitado a, daños directos, indirectos, especiales, fortuitos o consecuentes u otras pérdidas resultantes del uso o de la imposibilidad de utilizar nuestros productos.
+            </p>
+        <h6>*POLÍTICA DE REEMBOLSO Y GARANTÍA</h6>
+            <p>En el caso de productos que sean  mercancías irrevocables no-tangibles, no realizamos reembolsos después de que se envíe el producto, usted tiene la responsabilidad de entender antes de comprarlo.  Le pedimos que lea cuidadosamente antes de comprarlo. Hacemos solamente excepciones con esta regla cuando la descripción no se ajusta al producto. Hay algunos productos que pudieran tener garantía y posibilidad de reembolso pero este será especificado al comprar el producto. En tales casos la garantía solo cubrirá fallas de fábrica y sólo se hará efectiva cuando el producto se haya usado correctamente. La garantía no cubre averías o daños ocasionados por uso indebido. Los términos de la garantía están asociados a fallas de fabricación y funcionamiento en condiciones normales de los productos y sólo se harán efectivos estos términos si el equipo ha sido usado correctamente. Esto incluye:
+            
+            – De acuerdo a las especificaciones técnicas indicadas para cada producto.
+            – En condiciones ambientales acorde con las especificaciones indicadas por el fabricante.
+            – En uso específico para la función con que fue diseñado de fábrica.
+            – En condiciones de operación eléctricas acorde con las especificaciones y tolerancias indicadas.
+        </p>
+        <h6>*COMPROBACIÓN ANTIFRAUDE</h6>
+            <p>La compra del cliente puede ser aplazada para la comprobación antifraude. También puede ser suspendida por más tiempo para una investigación más rigurosa, para evitar transacciones fraudulentas.
+            </p>
+        <h6>*PRIVACIDAD</h6>
+        <p>Este sitio web  garantiza que la información personal que usted envía cuenta con la seguridad necesaria. Los datos ingresados por usuario o en el caso de requerir una validación de los pedidos no serán entregados a terceros, salvo que deba ser revelada en cumplimiento a una orden judicial o requerimientos legales.                                        
+           La suscripción a boletines de correos electrónicos publicitarios es voluntaria y podría ser seleccionada al momento de crear su cuenta.
+           reserva los derechos de cambiar o de modificar estos términos sin previo aviso.</p>
+
+
+
+        
+           <clr-checkbox-container clrInline>
+            <clr-checkbox-wrapper>
+              <input type="checkbox" clrCheckbox name="options" required value="option1" [(ngModel)]="options" />
+              <label>He leido y acepto los terminos de uso</label>
+            </clr-checkbox-wrapper>
+            <clr-control-helper></clr-control-helper>
+            <clr-control-error>Este paso es requerido</clr-control-error>
+          </clr-checkbox-container>
+    </clr-wizard-page>
+</clr-wizard>
+<!---------------------------------------->
+<!------------------wiz9----------------->
+<clr-wizard #wizard [(clrWizardOpen)]="wiz9" [clrWizardSize]="'lg'">
+                                <clr-wizard-title>Compra de Creditos</clr-wizard-title>
+                            
+                                <clr-wizard-button [type]="'cancel'">Cancel</clr-wizard-button>
+                                <clr-wizard-button [type]="'previous'">Back</clr-wizard-button>
+                                <clr-wizard-button [type]="'next'">Next</clr-wizard-button>
+                                <clr-wizard-button [type]="'finish'" (click)="basic1 = true;restarMoneda(280)">Done</clr-wizard-button>
+                            
+                                <clr-wizard-page>
+                                    <ng-template clrPageTitle>Descripcion de la compra</ng-template>
+
+                                    <div class="clr-row">
+                                            <div class="clr-row">
+                                                    <div class="clr-col-5">
+                                                        <span>
+                                                                <div class="card" id="subcard-categorias">
+                                                                        <div class="card-img">
+                                                                            <img src="../../../assets/vs (1).jpg" alt="..." />
+                                                                        </div>
+                                                                        <div class="card-block">
+                                                                            <p class="card-text">
+                                                                                Tarjeta: 35$ -- 750K
+                                                                                <br>
+                                                                    Costo: 280 PS
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                        </span>
+                                                    </div>
+                                                    <div class="clr-col-5">
+                                                        <span>
+                                                            <h5>Descripcion</h5>
+                                                            <p>
+                                                                El producto que usted desea adquirir es el paquete No.3 de Fifa, esta compra no otorga ninguna ventaja competitiva ni en TournamentStorm; esta compra es de uso exclusivo dentro del juego y no se admiten devoluciones. *consulte terminos y condiciones*
+                                                            </p>
+                                                        </span>
+                                                    </div>
+                                            </div>
+                                    </div>
+
+                                    
+                                </clr-wizard-page>
+                            
+                                <clr-wizard-page>
+                                    <ng-template clrPageTitle>Datos personales Para la compra</ng-template>
+
+                                    <form clrForm>
+                                        <clr-input-container>
+                                          <label>Nombre del comprador</label>
+                                          <input placeholder="Nombre" clrInput [(ngModel)]="exampleThree" name="name" required />
+                                          <clr-control-helper></clr-control-helper>
+                                          <clr-control-error>Este campo es requerido</clr-control-error>
+                                        </clr-input-container>
+                                      </form>
+
+                                      <form clrForm>
+                                        <clr-input-container>
+                                          <label>No. Documento personal</label>
+                                          <input placeholder="Documento" clrInput [(ngModel)]="exampleThree1" name="doc" required />
+                                          <clr-control-helper></clr-control-helper>
+                                          <clr-control-error>Este campo es requerido</clr-control-error>
+                                        </clr-input-container>
+                                      </form>
+
+                                      <form clrForm>
+                                        <clr-input-container>
+                                          <label>País</label>
+                                          <input placeholder="País" clrInput [(ngModel)]="exampleThree2" name="pais" required />
+                                          <clr-control-helper></clr-control-helper>
+                                          <clr-control-error>Este campo es requerido</clr-control-error>
+                                        </clr-input-container>
+                                      </form>
+
+                                      <form clrForm>
+                                        <clr-input-container>
+                                          <label>Localidad</label>
+                                          <input placeholder="Departamento/Estado" clrInput [(ngModel)]="exampleThree3" name="depa" required />
+                                          <clr-control-helper></clr-control-helper>
+                                          <clr-control-error>Este campo es requerido</clr-control-error>
+                                        </clr-input-container>
+                                      </form>
+                                </clr-wizard-page>
+                            
+                                <clr-wizard-page #pageThree>
+                                    <ng-template clrPageTitle>Metodo de pago</ng-template>
+                                    <div class="btn-group btn-inverse">
+                                        <button class="btn">Tarjeta de Credito/Debito</button>
+                                        <button class="btn"><a href="https://www.paypal.com/gt/home" target="_blank">Paypal</a></button>
+                                    </div>
+                                    <form class="clr-form">
+                                        <div class="clr-form-control">
+                                          <label for="basic" class="clr-control-label">No. de tarjeta</label>
+                                          <div class="clr-control-container">
+                                            <div class="clr-input-wrapper">
+                                              <input type="text" id="basic" placeholder="357159..." class="clr-input">
+                                              <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                                            </div>
+                                            <span class="clr-subtext">No. frontal de la tarjeta</span>
+                                          </div>
+                                        </div>
+                                      </form>
+
+                                      <form class="clr-form">
+                                        <div class="clr-form-control">
+                                          <label for="basic" class="clr-control-label">No. de CVC</label>
+                                          <div class="clr-control-container">
+                                            <div class="clr-input-wrapper">
+                                              <input type="text" id="basic" placeholder="***" class="clr-input">
+                                              <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                                            </div>
+                                            <span class="clr-subtext">Metodo de seguridad</span>
+                                          </div>
+                                        </div>
+                                      </form>
+
+                                      <form class="clr-form">
+                                        <div class="clr-form-control">
+                                          <label for="basic" class="clr-control-label">Fecha de venciminto</label>
+                                          <div class="clr-control-container">
+                                            <div class="clr-input-wrapper">
+                                              <input type="text" id="basic" placeholder="05/28" class="clr-input">
+                                              <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                                            </div>
+                                            <span class="clr-subtext">Fecha que expira la tarjeta</span>
+                                          </div>
+                                        </div>
+                                      </form>
+
+                                </clr-wizard-page>
+                            
+                                <clr-wizard-page #pageFive>
+                                    <ng-template clrPageTitle>Finalizacion de la compra</ng-template>
+                                    <h4>Terminos y condiciones</h4>                                  
+                                        <h6>INFORMACIÓN RELEVANTE</h6>
+                                        <p>
+                                        Es requisito necesario para la adquisición de los productos que se ofrecen en este sitio, que lea y acepte los siguientes Términos y Condiciones que a continuación se redactan. El uso de nuestros servicios así como la compra de nuestros productos implicará que usted ha leído y aceptado los Términos y Condiciones de Uso en el presente documento. Todas los productos  que son ofrecidos por nuestro sitio web pudieran ser creadas, cobradas, enviadas o presentadas por una página web tercera y en tal caso estarían sujetas a sus propios Términos y Condiciones. En algunos casos, para adquirir un producto, será necesario el registro por parte del usuario, con ingreso de datos personales fidedignos y definición de una contraseña.
+                                        El usuario puede elegir y cambiar la clave para su acceso de administración de la cuenta en cualquier momento, en caso de que se haya registrado y que sea necesario para la compra de alguno de nuestros productos.  no asume la responsabilidad en caso de que entregue dicha clave a terceros.                                       
+                                        Todas las compras y transacciones que se lleven a cabo por medio de este sitio web, están sujetas a un proceso de confirmación y verificación, el cual podría incluir la verificación del stock y disponibilidad de producto, validación de la forma de pago, validación de la factura (en caso de existir) y el cumplimiento de las condiciones requeridas por el medio de pago seleccionado. En algunos casos puede que se requiera una verificación por medio de correo electrónico.                                        
+                                        Los precios de los productos ofrecidos en esta Tienda Online es válido solamente en las compras realizadas en este sitio web.
+                                        </p>
+                                    <h6>*LICENCIA</h6>
+                                        <p>A través de su sitio web concede una licencia para que los usuarios utilicen  los productos que son vendidos en este sitio web de acuerdo a los Términos y Condiciones que se describen en este documento.
+                                        </p>
+                                    <h6>*USO NO AUTORIZADO</h6>
+                                        <p>En caso de que aplique (para venta de software, templetes, u otro producto de diseño y programación) usted no puede colocar uno de nuestros productos, modificado o sin modificar, en un CD, sitio web o ningún otro medio y ofrecerlos para la redistribución o la reventa de ningún tipo.
+                                        </p>
+                                    <h6>*PROPIEDAD</h6>
+                                        <p>Usted no puede declarar propiedad intelectual o exclusiva a ninguno de nuestros productos, modificado o sin modificar. Todos los productos son propiedad  de los proveedores del contenido. En caso de que no se especifique lo contrario, nuestros productos se proporcionan  sin ningún tipo de garantía, expresa o implícita. En ningún esta compañía será  responsables de ningún daño incluyendo, pero no limitado a, daños directos, indirectos, especiales, fortuitos o consecuentes u otras pérdidas resultantes del uso o de la imposibilidad de utilizar nuestros productos.
+                                        </p>
+                                    <h6>*POLÍTICA DE REEMBOLSO Y GARANTÍA</h6>
+                                        <p>En el caso de productos que sean  mercancías irrevocables no-tangibles, no realizamos reembolsos después de que se envíe el producto, usted tiene la responsabilidad de entender antes de comprarlo.  Le pedimos que lea cuidadosamente antes de comprarlo. Hacemos solamente excepciones con esta regla cuando la descripción no se ajusta al producto. Hay algunos productos que pudieran tener garantía y posibilidad de reembolso pero este será especificado al comprar el producto. En tales casos la garantía solo cubrirá fallas de fábrica y sólo se hará efectiva cuando el producto se haya usado correctamente. La garantía no cubre averías o daños ocasionados por uso indebido. Los términos de la garantía están asociados a fallas de fabricación y funcionamiento en condiciones normales de los productos y sólo se harán efectivos estos términos si el equipo ha sido usado correctamente. Esto incluye:
+                                        
+                                        – De acuerdo a las especificaciones técnicas indicadas para cada producto.
+                                        – En condiciones ambientales acorde con las especificaciones indicadas por el fabricante.
+                                        – En uso específico para la función con que fue diseñado de fábrica.
+                                        – En condiciones de operación eléctricas acorde con las especificaciones y tolerancias indicadas.
+                                    </p>
+                                    <h6>*COMPROBACIÓN ANTIFRAUDE</h6>
+                                        <p>La compra del cliente puede ser aplazada para la comprobación antifraude. También puede ser suspendida por más tiempo para una investigación más rigurosa, para evitar transacciones fraudulentas.
+                                        </p>
+                                    <h6>*PRIVACIDAD</h6>
+                                    <p>Este sitio web  garantiza que la información personal que usted envía cuenta con la seguridad necesaria. Los datos ingresados por usuario o en el caso de requerir una validación de los pedidos no serán entregados a terceros, salvo que deba ser revelada en cumplimiento a una orden judicial o requerimientos legales.                                        
+                                       La suscripción a boletines de correos electrónicos publicitarios es voluntaria y podría ser seleccionada al momento de crear su cuenta.
+                                       reserva los derechos de cambiar o de modificar estos términos sin previo aviso.</p>
+
+
+
+                                    
+                                       <clr-checkbox-container clrInline>
+                                        <clr-checkbox-wrapper>
+                                          <input type="checkbox" clrCheckbox name="options" required value="option1" [(ngModel)]="options" />
+                                          <label>He leido y acepto los terminos de uso</label>
+                                        </clr-checkbox-wrapper>
+                                        <clr-control-helper></clr-control-helper>
+                                        <clr-control-error>Este paso es requerido</clr-control-error>
+                                      </clr-checkbox-container>
+                                </clr-wizard-page>
+</clr-wizard>
+<!---------------------------------------->
+
+
+<!------------------modal1---------------->
+<clr-modal [(clrModalOpen)]="basic1">
+    <h3 class="modal-title">Compra Realizada Exitosamente</h3>
+    <div class="modal-footer">
+    <button type="button" class="btn btn-outline btn-sm" (click)="basic1 = false; status = ok">OK</button>
+    </div>
+</clr-modal>
+<!----------------------------------------> 
+            </div>
+    </div>
+</div>
+
+
+<app-footer></app-footer>

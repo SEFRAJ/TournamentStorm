@@ -1,0 +1,52 @@
+<app-header></app-header>
+<div class="main-container" >
+    <div class="content-container">
+            <div class="content-area">
+                    <clr-alert [clrAlertType]="'info'" *ngIf="status == 'oks'">
+                            <clr-alert-item>
+                                <span class="alert-text">
+                                    Solicitud Aceptada
+                                </span>
+                            </clr-alert-item>
+                        </clr-alert>
+                        <clr-alert [clrAlertType]="'info'" *ngIf="status == 'oke'">
+                                <clr-alert-item>
+                                    <span class="alert-text">
+                                        Solicitud Eliminada
+                                    </span>
+                                </clr-alert-item>
+                            </clr-alert>
+                    <h3 id="titulo-apartado"><clr-icon shape="users"></clr-icon> Solicitudes de Amistad</h3>
+                    <br>
+                    <clr-tree-node [(clrExpanded)]="expanded">
+                          Informacion
+                          <clr-tree-node>
+                                  <p>En esta seccion puedes aceptar o denegar solicitudes de amistad
+                                    </p>
+                          </clr-tree-node>
+                      </clr-tree-node> 
+
+                      
+                      <div class="clr-row">
+                            <div class="clr-col-lg-12 clr-col-12" *ngFor = "let s of solicitud" id="clr-row-amigos">
+                                    <div class="card" id="card-amigos">
+                                        <p>
+                                            
+                                            <clr-icon shape="user" class="is-solid"></clr-icon> {{s.emUsuario}}
+                                            
+                                             
+                                        </p>
+                                        <div class="card-footer">
+                                                <button class="btn btn-link btn-sm" (click)="aceptarSolicitud(s._id)">Aceptar</button>
+                                                <button class="btn btn-link btn-sm" (click)="eliminarSolicitud(s._id)">Rechazar</button>
+                                            </div>
+                                </div>
+                                <br>
+                            </div> 
+                        </div>   
+
+                        
+            </div>
+        </div>
+    </div>
+

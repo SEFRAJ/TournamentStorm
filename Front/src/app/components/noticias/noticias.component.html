@@ -1,0 +1,57 @@
+<app-header></app-header>
+<div class="main-container" >
+    <div class="content-container">
+            <div class="content-area">
+                    <h3 id="titulo-apartado"><clr-icon shape="bell" class="is-solid"></clr-icon> Noticias</h3>
+                    <br>
+                    <clr-tree-node [(clrExpanded)]="expanded">
+                          Informacion
+                          <clr-tree-node>                                  
+                                    <ul>
+                                            <p>En esta seccion encontras noticas como:
+                                                </p>
+                                            <li>Eventos de nuestra aplicacion</li>
+                                            <li>Oportunidades de ganar PS gratis</li>
+                                            <li>Actualizaciones de nuestra aplicacion</li>
+                                        </ul>
+                          </clr-tree-node>
+                      </clr-tree-node> 
+                      <div class="card-columns" id="rows">
+ 
+                                    <a href="..." class="card clickable" id="subcard-categorias">
+                                        <div class="card-img">
+                                            <img id="1" src="../../../assets/primera.png" alt="..." />
+                                        </div>
+                                    </a>
+                
+                                        <a href="..." class="card clickable" id="subcard-categorias">
+                                            <div class="card-block">
+                                                <h2>Afiliate</h2>
+                                            </div>
+                                            <div class="card-img">
+                                                <img src="../../../assets/afiliate.jpg" alt="..." />
+                                            </div>
+                                            <div class="card-block">
+                                                <p class="card-text">
+                                                    Al afiliarte a una empresa podras ganar aumentar tus ganancias
+                                                </p>
+                                            </div>
+                                        </a>
+                                
+                                            <a href="..." class="card clickable" id="subcard-categorias">
+                                                <div class="card-img">
+                                                    <img src="../../../assets/vip.aaedc6cb-d6ab-4ecd-99af-0718878f7567" alt="..." />
+                                                </div>
+                                                <div class="card-block">
+                                                    <p class="card-text">
+                                                        Vip
+                                                        Torneos de RPG en vio a un clic de distancia
+                                                    </p>
+                                                </div>
+                                            </a>
+               
+                                    </div>
+            </div>
+    </div>
+</div>
+<app-footer></app-footer>

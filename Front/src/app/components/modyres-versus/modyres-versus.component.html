@@ -1,0 +1,152 @@
+<app-header></app-header>
+<div class="main-container" >
+    <div class="content-container">
+            <div class="content-area">
+                <header class="header-7">
+                    <div class="branding">
+                        <a>
+                            <clr-icon shape="users" class="is-solid"></clr-icon>
+                            <span class="title">Modificaciones y Resultados</span>
+                        </a>
+                    </div>
+
+                    <!--  
+                    <div class="header-actions">
+
+                        <clr-dropdown>
+                            <button class="btn btn-link" (click)="basic = true"> <clr-icon shape="plus-circle" class="is-solid"></clr-icon></button>
+                        </clr-dropdown>
+
+                    </div>
+                    -->
+                </header>
+
+            <!-----------------------CONTENIDO----------------------->
+            <div class="content-area">
+                    <h1>Tus Versus</h1>
+                    <button class="btn btn-outline" [routerLink]="['/versus']" >Regresar</button>
+        
+                    <div class="clr-row">
+                        <div class="clr-col-lg-3 clr-col-12" *ngFor="let enc of versus">
+                            <div class="card clickable">
+                                <div class="card-header">
+                                    {{enc.nombreVersus}}
+                                </div>
+                                <div class="card-block">
+                                    <div class="card-media-block"> 
+                                        <img src="../../../assets/fornite.png" *ngIf="enc.tipoJuego == Fornite" class="card-media-image">
+                                        <img src="../../../assets/dota.png" *ngIf="enc.tipoJuego == Dota" class="card-media-image">
+                                        <img src="../../../assets/lol.png" *ngIf="enc.tipoJuego == lol" class="card-media-image">
+                                        <img src="../../../assets/fifaX.jpg" *ngIf="enc.tipoJuego == fifa" class="card-media-image">
+                                        <img src="../../../assets/minicraft.png" *ngIf="enc.tipoJuego == minecraft" class="card-media-image">
+                                        <img src="../../../assets/counter.png" *ngIf="enc.tipoJuego == counter" class="card-media-image">
+                                        <img src="../../../assets/mortal.png" *ngIf="enc.tipoJuego == mortal" class="card-media-image">
+                                        
+
+                                        <div class="card-media-description">
+        
+                                            <span class="card-media-text">
+                                                Creador: {{enc.nombreCreador}}
+                                            </span>
+                                            <span class="card-media-text">
+                                                Jugador1: {{enc.nombreRetador1}}
+                                            </span>
+                                            <span class="card-media-text">
+                                                Jugador2: {{enc.nombreRetador2}}
+                                            </span>
+                                            <span class="card-media-text">
+                                                Juego: {{enc.tipoJuego}}
+                                            </span>
+                                            <span class="card-media-title">
+                                                Estado: {{enc.estado}}
+                                            </span>
+                                            <span class="card-media-text">
+                                                Resultado: {{enc.resultado}}
+                                            </span>
+        
+                                        </div>
+                                    </div>
+        
+                                </div>
+                                <div class="card-footer">
+                                    <button class="btn btn-sm btn-link"  *ngIf="enc.resultado == resultado" (click)="basic = true;idVersus(enc._id)">Add-Resultado</button>
+                                    <button class="btn btn-sm btn-link"  (click)="delVersus(enc._id)">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+
+
+
+
+            <!------------------------------------------------------->
+            </div>
+
+
+    <clr-vertical-nav [clrVerticalNavCollapsible]="true" [(clrVerticalNavCollapsed)]="collapsed">
+            <a clrVerticalNavLink routerLink="/home" routerLinkActive="active">
+                <clr-icon shape="home" class="is-solid" clrVerticalNavIcon></clr-icon>
+                Inicio
+            </a>
+            <a clrVerticalNavLink routerLink="/home5" routerLinkActive="active">
+                <clr-icon clrVerticalNavIcon shape="bell" class="is-solid"></clr-icon>
+                Noticias
+            </a>
+            <a clrVerticalNavLink routerLink="/torneos" routerLinkActive="active">
+                <clr-icon clrVerticalNavIcon shape="organization" class="is-solid"></clr-icon>
+                Torneos
+            </a>
+            <a clrVerticalNavLink routerLink="/versus" routerLinkActive="active">
+                <clr-icon clrVerticalNavIcon shape="shrink"></clr-icon>
+                Versus
+            </a>
+            <a clrVerticalNavLink routerLink="/foro" routerLinkActive="active">
+                <clr-icon clrVerticalNavIcon shape="list" class="is-solid"></clr-icon>
+                Forum
+            </a>
+            <a clrVerticalNavLink routerLink="/amigos" routerLinkActive="active">
+                <clr-icon clrVerticalNavIcon shape="users" class="is-solid"></clr-icon>
+                Amigos
+            </a>
+            <a clrVerticalNavLink routerLink="/solicitudes" routerLinkActive="active">
+                <clr-icon clrVerticalNavIcon shape="users"></clr-icon>
+                Solicitudes
+            </a>
+            <a clrVerticalNavLink routerLink="/home2" routerLinkActive="active">
+                <clr-icon clrVerticalNavIcon shape="shield"></clr-icon>
+                Extra
+            </a>
+            <a clrVerticalNavLink routerLink="/home1" routerLinkActive="active">
+                <clr-icon clrVerticalNavIcon shape="certificate"></clr-icon>
+                Creditos
+            </a>
+        </clr-vertical-nav>
+        </div>
+    </div>
+
+
+    <!---------------------------MODALE ADD-RESULTADO------------------------------------>
+    
+<clr-modal [(clrModalOpen)]="basic">
+        <h3 class="modal-title">Añadir Resultado</h3>
+        <div class="modal-body">
+    
+            <form clrForm >
+                <clr-input-container>
+                    <label>Puntos jugador 1</label>
+                    <input type="number" clrInput placeholder="Puntos" name="puntosRetador1" [(ngModel)]="versusModel.puntosRetador1" />
+                </clr-input-container>
+
+                <clr-input-container>
+                    <label>Puntos jugador 2</label>
+                    <input type="number" clrInput placeholder="Puntos" name="puntosRetador2" [(ngModel)]="versusModel.puntosRetador2" />
+                </clr-input-container>
+            </form>
+    
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-outline" (click)="basic = false" [clrLoading]="validateBtnState">Cancel</button>
+            <button type="button" class="btn btn-primary" (click)="basic = false; addResultado()" [clrLoading]="validateBtnState">Ok</button>
+        </div>
+    </clr-modal>

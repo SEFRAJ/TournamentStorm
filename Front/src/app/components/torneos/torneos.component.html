@@ -1,0 +1,230 @@
+<app-header></app-header>
+<div class="main-container" >
+    <div class="content-container">
+            <div class="content-area">
+            <!-----------------------CONTENIDO----------------------->
+                    <h3 id="titulo-apartado"><clr-icon shape="shield" class="is-solid"></clr-icon> Bienvenido al apartado de Torneos</h3>
+                    <br>
+                    <button class="btn btn-link btn-sm" (click)="basic = true">Crear Torneo</button>
+                    <button class="btn btn-link btn-sm" (click)="basic2 = true">Codigo de Torneo</button>
+                    <clr-tree-node [(clrExpanded)]="expanded">
+                          Informacion
+                          <clr-tree-node>
+                                  <p>En esta seccion puedes crear torneos contra otros jugadores o bien unirte.
+                                      <br>                                        
+                                    </p>
+                          </clr-tree-node>
+                                                   
+                      </clr-tree-node>                      
+
+                    <clr-tabs>
+                            <clr-tab>
+                                <button clrTabLink id="link1">General</button>
+                                <clr-tab-content id="content1" *clrIfActive="true">
+                                    <br>
+                                               <clr-toggle-wrapper>
+                                                    <input type="checkbox" clrToggle required (change)="getTipo()"/>
+                                                    <label>Privados</label>
+                                                  </clr-toggle-wrapper>
+                                        <div class="clr-row">
+                                                <div class="clr-col-lg-2 clr-col-12" id="card-catergorias" *ngFor = "let enc of torneos">
+                                                        <div class="card" id="subcard-categorias">
+                                                                <div class="card-img">
+                                                                    <img src="../../../assets/forntine200.jpg" *ngIf="enc.juego == 'Fornite'" class="card-media-image">
+                                                                    <img src="../../../assets/dota200.png" *ngIf="enc.juego == 'Dota'" class="card-media-image">
+                                                                    <img src="../../../assets/lol200.jpg" *ngIf="enc.juego == 'League of Legends'" class="card-media-image">
+                                                                    <img src="../../../assets/fifa200.webp" *ngIf="enc.juego == 'Fifa'" class="card-media-image">
+                                                                    <img src="../../../assets/minecraft200.jpg" *ngIf="enc.juego == 'Minecraft'" class="card-media-image">
+                                                                    <img src="../../../assets/counter.png" *ngIf="enc.juego == 'Counter Strike'" class="card-media-image">
+                                                                    <img src="../../../assets/mortal.png" *ngIf="enc.juego == 'Mortal Combat'" class="card-media-image">
+                                                                </div>
+                                                                <div class="card-block">
+                                                                    <p class="card-text">
+                                                                            <clr-icon shape="details"></clr-icon> {{enc.nameTorneo}}
+                                                                            <br>
+                                                                            <span *ngIf="enc.tipo == true"><clr-icon shape="dollar-bill" class="is-solid"></clr-icon> De Paga</span>
+                                                                            <span *ngIf="enc.tipo == false"><clr-icon shape="savings" class="is-solid"></clr-icon> Libre</span>
+                                                                    </p>
+                                                                    <button class="btn btn-link btn-sm" (click)="redi(enc._id)">Detalles</button>
+                                                                </div>
+                                                            </div>
+                                                </div> 
+
+                                                <!--
+                                                <div class="clr-col-lg-3 clr-col-12" *ngFor = "let enc of torneos">
+                                                        <div class="card clickable" id="subcard-categorias">
+                                                            <div class="card-block">
+                                                                <div class="card-media-block">
+                                                                        <img src="../../../assets/forntine200.jpg" *ngIf="enc.juego == 'Fornite'" class="card-media-image">
+                                                                        <img src="../../../assets/dota200.png" *ngIf="enc.juego == 'Dota'" class="card-media-image">
+                                                                        <img src="../../../assets/lol200.jpg" *ngIf="enc.juego == 'League of Legends'" class="card-media-image">
+                                                                        <img src="../../../assets/fifa200.webp" *ngIf="enc.juego == 'Fifa'" class="card-media-image">
+                                                                        <img src="../../../assets/minecraft200.jpg" *ngIf="enc.juego == 'Minecraft'" class="card-media-image">
+                                                                        <img src="../../../assets/counter.png" *ngIf="enc.juego == 'Counter Strike'" class="card-media-image">
+                                                                        <img src="../../../assets/mortal.png" *ngIf="enc.juego == 'Mortal Combat'" class="card-media-image">
+                                                                    <div class="card-media-description">
+                                                                        <span class="card-media-title">
+                                                                                {{enc.nameTorneo}}
+                                                                        </span>
+                                                                        <span class="card-media-text">
+                                                                            <clr-icon shape="details"></clr-icon>:  Juego  : {{enc.juego}}
+                                                                            <br>
+                                                                            <span *ngIf="enc.tipo == true">Tipo: De Paga</span>
+                                                                            <span *ngIf="enc.tipo == false">Tipo: Libre</span>
+                                                                             
+                                                                            <br>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                                <button class="btn btn-link btn-sm" (click)="redi(enc._id)">Detalles</button>
+                                                            </div>
+                                                        </div>                                
+                                                    </div>-->
+                                                
+                                        </div>   
+                                </clr-tab-content>
+                            </clr-tab>
+                            <clr-tab>
+                                    <button clrTabLink id="link1">Mis Torneos</button>
+                                    <clr-tab-content id="content2" >
+                                            <div class="clr-row">
+                                                    <div class="clr-col-lg-2 clr-col-12" id="card-catergorias" *ngFor = "let enc of torneosme">
+                                                            <div class="card" id="subcard-categorias">
+                                                                    <div class="card-img">
+                                                                        <img src="../../../assets/forntine200.jpg" *ngIf="enc.juego == 'Fornite'" class="card-media-image">
+                                                                        <img src="../../../assets/dota200.png" *ngIf="enc.juego == 'Dota'" class="card-media-image">
+                                                                        <img src="../../../assets/lol200.jpg" *ngIf="enc.juego == 'League of Legends'" class="card-media-image">
+                                                                        <img src="../../../assets/fifa200.webp" *ngIf="enc.juego == 'Fifa'" class="card-media-image">
+                                                                        <img src="../../../assets/minecraft200.jpg" *ngIf="enc.juego == 'Minecraft'" class="card-media-image">
+                                                                        <img src="../../../assets/counter.png" *ngIf="enc.juego == 'Counter Strike'" class="card-media-image">
+                                                                        <img src="../../../assets/mortal.png" *ngIf="enc.juego == 'Mortal Combat'" class="card-media-image">
+                                                                    </div>
+                                                                    <div class="card-block">
+                                                                        <p class="card-text">
+                                                                                <clr-icon shape="details"></clr-icon> {{enc.nameTorneo}}
+                                                                                <br>
+                                                                                <span *ngIf="enc.tipo == true"><clr-icon shape="dollar-bill" class="is-solid"></clr-icon> De Paga</span>
+                                                                                <span *ngIf="enc.tipo == false"><clr-icon shape="savings" class="is-solid"></clr-icon> Libre</span>
+                                                                        </p>
+                                                                        <button class="btn btn-link btn-sm" (click)="redi(enc._id)">Detalles</button>
+                                                                    </div>
+                                                                </div>
+                                                    </div>                                                    
+                                            </div>   
+                                    </clr-tab-content>
+                                </clr-tab>
+                        </clr-tabs> 
+                </div>
+            <!------------------------------------------------------->
+        </div>
+    </div>
+<app-footer></app-footer>
+
+
+
+
+<!---------------------------MODALE ADD------------------------------------>
+    
+<clr-modal [(clrModalOpen)]="basic">
+        <h3 class="modal-title">Crear Torneo</h3>
+        <div class="modal-body">
+    
+            <form clrForm >
+                <clr-input-container>
+                    <label>Nombre del Torneo</label>
+                    <input clrInput placeholder="Nombre" name="nameTorneo" [(ngModel)]="torneo.nameTorneo" />
+                </clr-input-container>
+                <clr-input-container>
+                    <label>Descripcion</label>
+                    <input clrInput placeholder="Descripcion" name="Descripcion" [(ngModel)]="torneo.descripcion" />
+                </clr-input-container>
+    
+                <clr-select-container>
+                        <label>Juegos</label>
+                        <select clrSelect name="options" [(ngModel)]="torneo.juego">
+                                <option >Fornite</option>
+                                <option >Dota</option>
+                                <option >League of Legends</option>
+                                <option >Fifa</option>
+                                <option >Minecraft</option>
+                                <option >Counter Strike</option>
+                                <option >Mortal Combat</option>
+                        </select>
+                      </clr-select-container>
+                      <clr-radio-container clrInline>
+                            <label>Torneo</label>
+                            <clr-radio-wrapper>
+                              <input type="radio" clrRadio name="pt1" required value="false" [(ngModel)]="torneo.tipo" (change)="tipo= false"/>
+                              <label>Libre</label>
+                            </clr-radio-wrapper>
+                            <clr-radio-wrapper>
+                              <input type="radio" clrRadio name="pt2" required value="true" [(ngModel)]="torneo.tipo" (change)="tipo= true"/>
+                              <label>Paga</label>
+                            </clr-radio-wrapper>
+                          </clr-radio-container>
+                          
+                          <clr-input-container *ngIf="tipo == true">         
+                                <label>Costo</label>
+                                <input clrInput placeholder="valor" type="number" name="costo" [(ngModel)]="torneo.costo" />
+                            </clr-input-container>
+
+                            <clr-radio-container clrInline>
+                                    <label>Tipo de Torneo</label>
+                                    <clr-radio-wrapper>
+                                      <input type="radio" clrRadio name="normal" required value="false" [(ngModel)]="torneo.creativo" />
+                                      <label>Normal</label>
+                                    </clr-radio-wrapper>
+                                    <clr-radio-wrapper>
+                                      <input type="radio" clrRadio name="creativo" required value="true" [(ngModel)]="torneo.creativo"/>
+                                      <label>Creatvio</label>
+                                    </clr-radio-wrapper>
+                                  </clr-radio-container>
+
+                          <clr-radio-container clrInline>
+                                <label>Cantidad de jugadores</label>
+                                <clr-radio-wrapper>
+                                  <input type="radio" clrRadio name="4" required value="4" [(ngModel)]="torneo.cantidad" />
+                                  <label>4 Jugadores</label>
+                                </clr-radio-wrapper>
+                                <clr-radio-wrapper>
+                                  <input type="radio" clrRadio name="8" required value="8" [(ngModel)]="torneo.cantidad" />
+                                  <label>8 Jugadores</label>
+                                </clr-radio-wrapper>
+                                <clr-radio-wrapper>
+                                    <input type="radio" clrRadio name="16" required value="16" [(ngModel)]="torneo.cantidad" />
+                                    <label>16 Jugadores</label>
+                                </clr-radio-wrapper>
+                              </clr-radio-container>
+            </form>
+    
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-outline" (click)="basic = false" [clrLoading]="validateBtnState">Cancel</button>
+            <button type="button" class="btn btn-link btn-sm" (click)="addTorneo()" [clrLoading]="validateBtnState">Ok</button>
+        </div>
+    </clr-modal>
+    <clr-modal [(clrModalOpen)]="basic2">
+            <h3 class="modal-title">Crear Torneo</h3>
+            <div class="modal-body">
+                    <clr-alert [clrAlertType]="'info'" *ngIf="status2 !== 'ok'">
+                            <clr-alert-item>
+                                <span class="alert-text">
+                                    {{status2}}
+                                </span>
+                            </clr-alert-item>
+                        </clr-alert>
+
+                <form clrForm >
+                        <clr-input-container>
+                                <label>Ingrse el codigo</label>
+                                <input placeholder="" clrInput [(ngModel)]="codigo" name="codigo" required />
+                                <clr-control-error>Ingrese un codigo valido</clr-control-error>
+                              </clr-input-container>
+                </form>
+        
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline" (click)="basic2 = false" [clrLoading]="validateBtnState">Cancel</button>
+                <button type="button" class="btn btn-link btn-sm" (click)="getCodigo()" [clrLoading]="validateBtnState">Ok</button>
+            </div>
+        </clr-modal>

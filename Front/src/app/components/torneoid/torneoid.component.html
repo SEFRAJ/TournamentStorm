@@ -1,0 +1,385 @@
+<app-header></app-header>
+<div class="main-container" >
+    <div class="content-container">
+            <div class="content-area">
+                    <clr-alert [clrAlertType]="'info'" *ngIf="status !== 'ok'">
+                            <clr-alert-item>
+                                <span class="alert-text">
+                                    {{status}}
+                                </span>
+                            </clr-alert-item>
+                        </clr-alert>
+                    <h3>Apartado de Torneo</h3>
+                    <h5>Torneo: {{torneo.nameTorneo}}</h5>
+
+                    <clr-tree-node [(clrExpanded)]="expanded">
+                            <clr-icon shape="details" class="is-solid"></clr-icon> Detalles: 
+                          <clr-tree-node>
+                                  <p>
+                                    <clr-icon shape="administrator" class="is-solid"></clr-icon> Administrador: {{torneo.nameUser}}
+                                      <br>
+                                      <clr-icon shape="pinboard" class="is-solid"></clr-icon> Descripcion: {{torneo.descripcion}}
+                                      <br>
+                                      <clr-icon shape="help" class="is-solid"></clr-icon> <span *ngIf="torneo.tipo == true"> Tipo: De Paga</span>
+                                      <span *ngIf="torneo.tipo == false"> Tipo: Libre</span>
+                                      <br>
+                                      <clr-icon shape="info-standard" class="is-solid"></clr-icon> Juego: {{torneo.juego}}
+                                          <br>
+                                      <clr-icon shape="info-standard" class="is-solid"></clr-icon> Costo: {{torneo.costo}}
+                                      <br>
+                                      <clr-icon shape="info-standard" class="is-solid"></clr-icon> Premio: {{torneo.premioFinal}}
+                                          <br>
+                                          <clr-icon shape="details" class="is-solid"></clr-icon> Codigo: {{torneo._id}}
+                                        <br>
+                                        <br>
+                                    </p>
+                          </clr-tree-node>
+                          <button class="btn btn-link btn-sm" *ngIf=" torneo.idUser != identity._id && ver == false && torneo.go == false && torneo.creativo == false" (click)="addUser()" >Unirse</button>
+                          <button class="btn btn-link btn-sm" *ngIf=" torneo.idUser == identity._id && torneo.go == false" (click)="initTorneo()">Inciar</button>
+                        </clr-tree-node> 
+                        <clr-tree-node >
+                                <clr-icon shape="details" class="is-solid"></clr-icon> Jugadores: 
+                              <clr-tree-node>
+                                  <ul>
+                                      <li *ngFor = "let enc of torneo.jugadores"><clr-icon shape="user" class="is-solid"></clr-icon> Usuarios: {{enc.nombre}}</li>
+                                  </ul>
+                                    
+                                    
+                              </clr-tree-node>
+                              <button class="btn btn-link btn-sm" *ngIf=" torneo.idUser == identity._id && torneo.go == false && torneo.creativo == true" (click)="basic2 = true" >Añadir Jugador</button>
+
+                              <button class="btn btn-link btn-sm" *ngIf=" torneo.idUser == identity._id && torneo.faseA > 1 && torneo.go == true" (click)="avaTorneo()">Avanzar</button>
+                              <button class="btn btn-link btn-sm" *ngIf=" torneo.idUser == identity._id && torneo.go == true && torneo.faseA == 1" (click)="endTorneo()">Finalizar</button>
+                            </clr-tree-node>
+
+                        <br>   
+                        <div class="clr-row" *ngIf="torneo.go == true && torneo.fase > 3 && 4 >= torneo.faseA">
+                                <div class="clr-col-lg-12 clr-col-12" >
+                                        <div class="card" id="card-torneo-titulo" > 
+                                        <span class="vs-torneo">
+                                                <span class="vs">Octavos De Final</span><br>                                                
+                                       </span>
+                                    </div>
+                                </div>   
+                                <div class="clr-col-lg-2 clr-col-12" ></div>
+                                <div class="clr-col-lg-3 clr-col-12" >
+                                    <div class="card" id="card-torneo" >                                                     
+                                            <span class="user1">
+                                                    <clr-icon shape="user" class="is-solid"></clr-icon> {{fase4.jugadores[0].nombre}}
+                                            </span>                                                                                                                                        
+                                            <span class="user2">
+                                                    {{fase4.jugadores[1].nombre}} <clr-icon shape="user" class="is-solid"></clr-icon>
+                                            </span>
+                                            <span class="vs-torneo">
+                                                    <span class="vs">Vs</span><br>
+                                                    {{fase4.jugadores[0].puntosA}}  -  {{fase4.jugadores[1].puntosA}}
+                                           </span>
+                                            <button class="btn btn-link btn-sm" *ngIf="fase4.jugadores[0].go == false" (click)="basic=true;  n1= fase4.jugadores[0].nombre;  j1= fase4.jugadores[0].id; n2= fase4.jugadores[1].nombre;  j2= fase4.jugadores[1].id;">Resultado</button>                                    
+                                    </div>
+                                    <div class="card" id="card-torneo" >                                                     
+                                            <span class="user1">
+                                                    <clr-icon shape="user" class="is-solid"></clr-icon> {{fase4.jugadores[2].nombre}}
+                                            </span>                                                                                                                                        
+                                            <span class="user2">
+                                                    {{fase4.jugadores[3].nombre}} <clr-icon shape="user" class="is-solid"></clr-icon>
+                                            </span>
+                                            <span class="vs-torneo">
+                                                    <span class="vs">Vs</span><br>
+                                                    {{fase4.jugadores[2].puntosA}}  -  {{fase4.jugadores[3].puntosA}}
+                                           </span>
+                                            <button class="btn btn-link btn-sm" *ngIf="fase4.jugadores[2].go == false" (click)="basic=true;  n1= fase4.jugadores[2].nombre;  j1= fase4.jugadores[2].id; n2= fase4.jugadores[3].nombre;  j2= fase4.jugadores[3].id;">Resultado</button>                                    
+                                    </div>
+                                    <div class="card" id="card-torneo" >                                                     
+                                            <span class="user1">
+                                                    <clr-icon shape="user" class="is-solid"></clr-icon> {{fase4.jugadores[4].nombre}}
+                                            </span>                                                                                                                                        
+                                            <span class="user2">
+                                                    {{fase4.jugadores[5].nombre}} <clr-icon shape="user" class="is-solid"></clr-icon>
+                                            </span>
+                                            <span class="vs-torneo">
+                                                    <span class="vs">Vs</span><br>
+                                                    {{fase4.jugadores[4].puntosA}}  -  {{fase4.jugadores[5].puntosA}}
+                                           </span>
+                                            <button class="btn btn-link btn-sm" *ngIf="fase4.jugadores[4].go == false" (click)="basic=true;  n1= fase4.jugadores[4].nombre;  j1= fase4.jugadores[4].id; n2= fase4.jugadores[5].nombre;  j2= fase4.jugadores[5].id;">Resultado</button>                                    
+                                    </div>
+                                    <div class="card" id="card-torneo" >                                                     
+                                            <span class="user1">
+                                                    <clr-icon shape="user" class="is-solid"></clr-icon> {{fase4.jugadores[6].nombre}}
+                                            </span>                                                                                                                                        
+                                            <span class="user2">
+                                                    {{fase4.jugadores[7].nombre}} <clr-icon shape="user" class="is-solid"></clr-icon>
+                                            </span>
+                                            <span class="vs-torneo">
+                                                    <span class="vs">Vs</span><br>
+                                                    {{fase4.jugadores[6].puntosA}}  -  {{fase4.jugadores[7].puntosA}}
+                                           </span>
+                                            <button class="btn btn-link btn-sm" *ngIf="fase4.jugadores[6].go == false" (click)="basic=true;  n1= fase4.jugadores[6].nombre;  j1= fase4.jugadores[6].id; n2= fase4.jugadores[7].nombre;  j2= fase4.jugadores[7].id;">Resultado</button>                                    
+                                    </div>
+                                </div>    
+                                <div class="clr-col-lg-2 clr-col-12" ></div>  
+                                <div class="clr-col-lg-3 clr-col-12" >
+                                        <div class="card" id="card-torneo" >                                                     
+                                                <span class="user1">
+                                                        <clr-icon shape="user" class="is-solid"></clr-icon> {{fase4.jugadores[8].nombre}}
+                                                </span>                                                                                                                                        
+                                                <span class="user2">
+                                                        {{fase4.jugadores[9].nombre}} <clr-icon shape="user" class="is-solid"></clr-icon>
+                                                </span>
+                                                <span class="vs-torneo">
+                                                        <span class="vs">Vs</span><br>
+                                                        {{fase4.jugadores[8].puntosA}}  -  {{fase4.jugadores[9].puntosA}}
+                                               </span>
+                                                <button class="btn btn-link btn-sm" *ngIf="fase4.jugadores[8].go == false" (click)="basic=true;  n1= fase4.jugadores[8].nombre;  j1= fase4.jugadores[8].id; n2= fase4.jugadores[9].nombre;  j2= fase4.jugadores[9].id;">Resultado</button>                                    
+                                        </div>
+                                        <div class="card" id="card-torneo" >                                                     
+                                                <span class="user1">
+                                                        <clr-icon shape="user" class="is-solid"></clr-icon> {{fase4.jugadores[10].nombre}}
+                                                </span>                                                                                                                                        
+                                                <span class="user2">
+                                                        {{fase4.jugadores[11].nombre}} <clr-icon shape="user" class="is-solid"></clr-icon>
+                                                </span>
+                                                <span class="vs-torneo">
+                                                        <span class="vs">Vs</span><br>
+                                                        {{fase4.jugadores[10].puntosA}}  -  {{fase4.jugadores[11].puntosA}}
+                                               </span>
+                                                <button class="btn btn-link btn-sm" *ngIf="fase4.jugadores[10].go == false" (click)="basic=true;  n1= fase4.jugadores[10].nombre;  j1= fase4.jugadores[10].id; n2= fase4.jugadores[11].nombre;  j2= fase4.jugadores[11].id;">Resultado</button>                                    
+                                        </div>
+                                        <div class="card" id="card-torneo" >                                                     
+                                                <span class="user1">
+                                                        <clr-icon shape="user" class="is-solid"></clr-icon> {{fase4.jugadores[12].nombre}}
+                                                </span>                                                                                                                                        
+                                                <span class="user2">
+                                                        {{fase4.jugadores[13].nombre}} <clr-icon shape="user" class="is-solid"></clr-icon>
+                                                </span>
+                                                <span class="vs-torneo">
+                                                        <span class="vs">Vs</span><br>
+                                                        {{fase4.jugadores[12].puntosA}}  -  {{fase4.jugadores[13].puntosA}}
+                                               </span>
+                                                <button class="btn btn-link btn-sm" *ngIf="fase4.jugadores[12].go == false" (click)="basic=true;  n1= fase4.jugadores[12].nombre;  j1= fase4.jugadores[12].id; n2= fase4.jugadores[13].nombre;  j2= fase4.jugadores[13].id;">Resultado</button>                                    
+                                        </div>
+                                        <div class="card" id="card-torneo" >                                                     
+                                                <span class="user1">
+                                                        <clr-icon shape="user" class="is-solid"></clr-icon> {{fase4.jugadores[14].nombre}}
+                                                </span>                                                                                                                                        
+                                                <span class="user2">
+                                                        {{fase4.jugadores[15].nombre}} <clr-icon shape="user" class="is-solid"></clr-icon>
+                                                </span>
+                                                <span class="vs-torneo">
+                                                        <span class="vs">Vs</span><br>
+                                                        {{fase4.jugadores[14].puntosA}}  -  {{fase4.jugadores[15].puntosA}}
+                                               </span>
+                                                <button class="btn btn-link btn-sm" *ngIf="fase4.jugadores[14].go == false" (click)="basic=true;  n1= fase4.jugadores[14].nombre;  j1= fase4.jugadores[14].id; n2= fase4.jugadores[15].nombre;  j2= fase4.jugadores[15].id;">Resultado</button>                                    
+                                        </div>
+                                    </div>     
+                                    <div class="clr-col-lg-2 clr-col-12" ></div>                                  
+                        </div>
+                        <br>
+                        <div class="clr-row" *ngIf="torneo.go == true && torneo.fase > 2 && 3 >= torneo.faseA">
+                                <div class="clr-col-lg-12 clr-col-12" >
+                                        <div class="card" id="card-torneo-titulo" > 
+                                        <span class="vs-torneo">
+                                                <span class="vs">Cuartos De Final</span><br>                                                
+                                       </span>
+                                    </div>
+                                </div>   
+                                <div class="clr-col-lg-2 clr-col-12" ></div>
+                                <div class="clr-col-lg-3 clr-col-12" >
+                                    <div class="card" id="card-cuartofinal" >                                                     
+                                            <span class="user1">
+                                                    <clr-icon shape="user" class="is-solid"></clr-icon> {{fase3.jugadores[0].nombre}}
+                                            </span>                                                                                                                                        
+                                            <span class="user2">
+                                                    {{fase3.jugadores[1].nombre}} <clr-icon shape="user" class="is-solid"></clr-icon>
+                                            </span>
+                                            <span class="vs-torneo">
+                                                    <span class="vs">Vs</span><br>
+                                                    {{fase3.jugadores[0].puntosA}}  -  {{fase3.jugadores[1].puntosA}}
+                                           </span>
+                                            <button class="btn btn-link btn-sm" *ngIf="fase3.jugadores[0].go == false" (click)="basic=true;  n1= fase3.jugadores[0].nombre;  j1= fase3.jugadores[0].id; n2= fase3.jugadores[1].nombre;  j2= fase3.jugadores[1].id;">Resultado</button>                                    
+                                    </div>
+
+                                            <div class="card" id="card-cuartofinal" >                                                     
+                                                    <span class="user1">
+                                                            <clr-icon shape="user" class="is-solid"></clr-icon> {{fase3.jugadores[2].nombre}}
+                                                    </span>                                                                                                                                        
+                                                    <span class="user2">
+                                                            {{fase3.jugadores[3].nombre}} <clr-icon shape="user" class="is-solid"></clr-icon>
+                                                    </span>
+                                                    <span class="vs-torneo">
+                                                            <span class="vs">Vs</span><br>
+                                                            {{fase3.jugadores[2].puntosA}}  -  {{fase3.jugadores[3].puntosA}}
+                                                   </span>
+                                                    <button class="btn btn-link btn-sm" *ngIf="fase3.jugadores[2].go == false" (click)="basic=true;  n1= fase3.jugadores[2].nombre;  j1= fase3.jugadores[2].id; n2= fase3.jugadores[3].nombre;  j2= fase3.jugadores[3].id;">Resultado</button>                                    
+                                            </div>
+                                </div>                            
+                                <div class="clr-col-lg-2 clr-col-12" ></div>    
+                                <div class="clr-col-lg-3 clr-col-12" >
+                                        <div class="card" id="card-cuartofinal" >                                                     
+                                                <span class="user1">
+                                                        <clr-icon shape="user" class="is-solid"></clr-icon> {{fase3.jugadores[4].nombre}}
+                                                </span>                                                                                                                                        
+                                                <span class="user2">
+                                                        {{fase3.jugadores[5].nombre}} <clr-icon shape="user" class="is-solid"></clr-icon>
+                                                </span>
+                                                <span class="vs-torneo">
+                                                        <span class="vs">Vs</span><br>
+                                                        {{fase3.jugadores[4].puntosA}}  -  {{fase3.jugadores[5].puntosA}}
+                                               </span>
+                                                <button class="btn btn-link btn-sm" *ngIf="fase3.jugadores[4].go == false" (click)="basic=true;  n1= fase3.jugadores[4].nombre;  j1= fase3.jugadores[4].id; n2= fase3.jugadores[5].nombre;  j2= fase3.jugadores[5].id;">Resultado</button>                                    
+                                        </div>
+                                        <div class="card" id="card-cuartofinal" >                                                     
+                                                <span class="user1">
+                                                        <clr-icon shape="user" class="is-solid"></clr-icon> {{fase3.jugadores[6].nombre}}
+                                                </span>                                                                                                                                        
+                                                <span class="user2">
+                                                        {{fase3.jugadores[7].nombre}} <clr-icon shape="user" class="is-solid"></clr-icon>
+                                                </span>
+                                                <span class="vs-torneo">
+                                                        <span class="vs">Vs</span><br>
+                                                        {{fase3.jugadores[6].puntosA}}  -  {{fase3.jugadores[7].puntosA}}
+                                               </span>
+                                                <button class="btn btn-link btn-sm" *ngIf="fase3.jugadores[6].go == false" (click)="basic=true;  n1= fase3.jugadores[6].nombre;  j1= fase3.jugadores[6].id; n2= fase3.jugadores[7].nombre;  j2= fase3.jugadores[7].id;">Resultado</button>                                    
+                                        </div>
+                                    </div>     
+                                    <div class="clr-col-lg-2 clr-col-12" ></div>                                  
+                        </div> 
+                        <br>
+                        <div class="clr-row" *ngIf="torneo.go == true && 2 >= torneo.faseA">
+                                <div class="clr-col-lg-12 clr-col-12" >
+                                        <div class="card" id="card-torneo-titulo" > 
+                                        <span class="vs-torneo">
+                                                <span class="vs">Semifnales</span><br>                                                
+                                       </span>
+                                    </div>
+                                </div>   
+                                <div class="clr-col-lg-2 clr-col-12" ></div>
+                                <div class="clr-col-lg-3 clr-col-12" >
+                                    <div class="card" id="card-semifinal" >                                                     
+                                            <span class="user1">
+                                                    <clr-icon shape="user" class="is-solid"></clr-icon> {{fase2.jugadores[0].nombre}}
+                                            </span>                                                                                                                                        
+                                            <span class="user2">
+                                                    {{fase2.jugadores[1].nombre}} <clr-icon shape="user" class="is-solid"></clr-icon>
+                                            </span>
+                                            <span class="vs-torneo">
+                                                    <span class="vs">Vs</span><br>
+                                                    {{fase2.jugadores[0].puntosA}}  -  {{fase2.jugadores[1].puntosA}}
+                                           </span>
+                                            <button class="btn btn-link btn-sm" *ngIf="fase2.jugadores[0].go == false" (click)="basic=true;  n1= fase2.jugadores[0].nombre;  j1= fase2.jugadores[0].id; n2= fase2.jugadores[1].nombre;  j2= fase2.jugadores[1].id;">Resultado</button>                                    
+                                    </div>
+                                </div>                  
+                                <div class="clr-col-lg-2 clr-col-12" ></div>                
+                                <div class="clr-col-lg-3 clr-col-12" >
+
+                                        <div class="card" id="card-semifinal">                                                     
+                                                <span class="user1">
+                                                        <clr-icon shape="user" class="is-solid"></clr-icon> {{fase2.jugadores[2].nombre}}
+                                                </span>                                                                                                                                        
+                                                <span class="user2">
+                                                        {{fase2.jugadores[3].nombre}} <clr-icon shape="user" class="is-solid"></clr-icon>
+                                                </span>
+                                                <span class="vs-torneo">
+                                                        <span class="vs">Vs</span><br>
+                                                        {{fase2.jugadores[2].puntosA}}  -  {{fase2.jugadores[3].puntosA}}
+                                               </span>
+                                                <button class="btn btn-link btn-sm" *ngIf="fase2.jugadores[2].go == false" (click)="basic=true;  n1= fase2.jugadores[2].nombre;  j1= fase2.jugadores[2].id; n2= fase2.jugadores[3].nombre;  j2= fase2.jugadores[3].id;">Resultado</button>                                    
+                                        </div>
+                                    </div>     
+                                    <div class="clr-col-lg-2 clr-col-12" ></div>                                  
+                        </div>  
+                        <br>
+                        <div class="clr-row" *ngIf="torneo.faseA == 1">
+                                <div class="clr-col-lg-12 clr-col-12" >
+                                        <div class="card" id="card-torneo-titulo" > 
+                                        <span class="vs-torneo">
+                                                <span class="vs">Final</span><br>                                                
+                                       </span>
+                                    </div>
+                                </div>   
+                                <div class="clr-col-lg-4 clr-col-12" ></div>
+                                <div class="clr-col-lg-4  clr-col-12" >
+                                    <div class="card"  id="card-final">                                                     
+                                            <span class="user1">
+                                                    <clr-icon shape="user" class="is-solid"></clr-icon> {{fase1.jugadores[0].nombre}}
+                                            </span>                                                                                                                                        
+                                            <span class="user2">
+                                                    {{fase1.jugadores[1].nombre}} <clr-icon shape="user" class="is-solid"></clr-icon>
+                                            </span>
+                                            <span class="vs-torneo">
+                                                    <span class="vs">Vs</span><br>
+                                                    {{fase1.jugadores[0].puntosA}}  -  {{fase1.jugadores[1].puntosA}}
+                                           </span>
+                                            <button class="btn btn-link btn-sm" *ngIf="fase1.jugadores[0].go == false" (click)="basic=true;  n1= fase1.jugadores[0].nombre;  j1= fase1.jugadores[0].id; n2= fase1.jugadores[1].nombre;  j2= fase1.jugadores[1].id;">Resultado</button>                                    
+                                    </div>
+                                </div>                                   
+                                <div class="clr-col-lg-4 clr-col-12" ></div>                                  
+                        </div> 
+
+                                    <div class="clr-row">
+                                            <div class="card" id="card-torneo" *ngIf="fase1.ganadores.length > 0">
+                                                <div class="card-block">
+                                                    <div class="card-media-block">
+                                                        <div class="card-media-description">
+                                                                <span class="vs">
+                                                                        <clr-icon shape="user" class="is-solid"></clr-icon> Ganador: {{fase1.ganadores[0].nombre}}
+                                                                </span>
+                                                            </div>                                 
+                                                    </div>
+                                                </div>
+                                            </div>                                            
+                                 </div>
+                </div>
+    </div>
+</div>
+<clr-modal [(clrModalOpen)]="basic">
+        <h3 class="modal-title">Añadir Resultado</h3>
+        <div class="modal-body">
+    
+            <form clrForm > 
+                    <clr-input-container>
+                            <label>Jugador 1</label>
+                            <input clrInput placeholder="Nombre" name="n1" [(ngModel)]="n1"  disabled/>
+                        </clr-input-container>
+                        <clr-input-container>
+                                <label>Puntos</label>
+                            <input clrInput placeholder="Puntos" name="p1" [(ngModel)]="p1" type="number" />
+                        </clr-input-container>
+                        <clr-input-container>
+                                <label>Jugador 2</label>
+                                <input clrInput placeholder="Nombre" name="n2" [(ngModel)]="n2" disabled/>
+                            </clr-input-container>
+                            <clr-input-container>
+                                    <label>Puntos</label>
+                                <input clrInput placeholder="Puntos" name="p2" [(ngModel)]="p2" type="number" />
+                            </clr-input-container>
+                        
+            </form>
+    
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-outline" (click)="basic = false" [clrLoading]="validateBtnState">Cancel</button>
+            <button type="button" class="btn btn-link btn-sm" (click)="basic = false; addResultado()" [clrLoading]="validateBtnState">Ok</button>
+        </div>
+    </clr-modal>
+    <clr-modal [(clrModalOpen)]="basic2">
+            <h3 class="modal-title">Añadir Jugador</h3>
+            <div class="modal-body">
+        
+                <form clrForm > 
+                        <clr-input-container>
+                                <label>Id</label>
+                                <input clrInput placeholder="" name="idj" [(ngModel)]="id"/>
+                            </clr-input-container>
+                            <clr-input-container>
+                                    <label>Nick</label>
+                                    <input clrInput placeholder="" name="nick" [(ngModel)]="jugador"/>
+                                </clr-input-container>
+                </form>
+        
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline" (click)="basic2 = false" [clrLoading]="validateBtnState">Cancel</button>
+                <button type="button" class="btn btn-link btn-sm" (click)=" addJugador()" [clrLoading]="validateBtnState">Ok</button>
+            </div>
+        </clr-modal>
+<app-footer></app-footer>
